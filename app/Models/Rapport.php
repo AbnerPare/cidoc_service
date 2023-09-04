@@ -15,10 +15,8 @@ class Rapport extends Authenticatable implements MustVerifyEmail {
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable = [
-        'Titre',
-        'Localité',
-        'Durabilité',
-        'Département',
+        'Description',
+        'Thématique',
         'pdf_path'
     ];
 

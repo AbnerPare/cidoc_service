@@ -107,6 +107,22 @@
                                 </div>
                             </div>
 
+
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">raison</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="raison" placeholder="raison"
+                                        @error('raison') is-invalid @enderror>
+                                    @error('raison')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong >{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label">Image</label>
                                 <div class="col-sm-9">

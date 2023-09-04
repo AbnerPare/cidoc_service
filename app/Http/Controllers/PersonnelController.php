@@ -30,6 +30,7 @@ class PersonnelController extends Controller {
             'téléphone' => 'required',
             'département' => 'required',
             'Statut_de_présence' => 'required',
+            'raison' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:61440'
         ] );
 
@@ -43,6 +44,7 @@ class PersonnelController extends Controller {
             'téléphone' => $validatedData[ 'téléphone' ],
             'département' => $validatedData[ 'département' ],
             'Statut_de_présence' => $validatedData[ 'Statut_de_présence' ],
+            'raison' => $validatedData[ 'raison' ],
             'image' => $fileName, // Enregistrez le nom du fichier image dans la base de données
         ] );
 
@@ -71,6 +73,7 @@ class PersonnelController extends Controller {
             'téléphone' => 'required',
             'département' => 'required',
             'Statut_de_présence' => 'required',
+            'raison' => 'required',
             'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:61440', // Adjusted max size and added 'sometimes'
         ] );
 
@@ -91,6 +94,7 @@ class PersonnelController extends Controller {
         $user->téléphone = $validatedData[ 'téléphone' ];
         $user->département = $validatedData[ 'département' ];
         $user->Statut_de_présence = $validatedData[ 'Statut_de_présence' ];
+        $user->raison = $validatedData[ 'raison' ];
         $user->save();
 
         return redirect()->route( 'personnels.perso' )->with( [

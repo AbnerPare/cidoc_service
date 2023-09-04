@@ -10,10 +10,8 @@ return new class extends Migration
     {
         Schema::create('rapports', function (Blueprint $table) {
             $table->id();
-            $table->string('Titre');
-            $table->string('Localité');
-            $table->string('Durabilité');
-            $table->string('Département');
+            $table->string('Description');
+            $table->string('Thématique');
             $table->string('pdf_path')->nullable();
             $table->timestamps();
         });

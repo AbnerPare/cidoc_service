@@ -27,24 +27,11 @@
                             enctype="multipart/form-data" >
                             @csrf
                             <div class="row mb-3">
-                                <label class="col-sm-3 col-form-label">Titre</label>
+                                <label class="col-sm-3 col-form-label">Description</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="Titre" placeholder="Titre"
-                                        @error('Titre') is-invalid @enderror>
-                                    @error('Titre')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label class="col-sm-3 col-form-label">Localité</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="Localité" placeholder="Localité"
-                                        @error('Localité') is-invalid @enderror>
-                                    @error('Localité')
+                                    <input type="text" class="form-control" name="Description" placeholder="Description"
+                                        @error('Description') is-invalid @enderror maxlength="70">
+                                    @error('Description')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -55,24 +42,10 @@
 
 
                             <div class="row mb-3">
-                                <label class="col-sm-3 col-form-label">Durabilité</label>
+                                <label class="col-sm-3 col-form-label">Thématique</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="Durabilité" placeholder="Durabilité"
-                                        @error('Durabilité') is-invalid @enderror>
-                                    @error('Durabilité')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong >{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-
-                            <div class="row mb-3">
-                                <label class="col-sm-3 col-form-label">Département</label>
-                                <div class="col-sm-9">
-                                    <select class="form-control" name="Département">
-                                        <option value="" aria-placeholder="">Sélectionnez un département</option>
+                                    <select class="form-control" name="Thématique">
+                                        <option value="" aria-placeholder="">Sélectionnez une thématique</option>
                                         <option value="Actions DED">Actions DED</option>
                                         <option value="Actions DHC">Actions DHC</option>
                                         <option value="Action Protection">Action Protection</option>
@@ -86,6 +59,7 @@
                                     @enderror
                                 </div>
                             </div>
+
 
 
 

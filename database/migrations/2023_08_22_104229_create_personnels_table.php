@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('téléphone');
             $table->string('département');
             $table->string('Statut_de_présence');
+            $table->string('raison');
             $table->string('image');
             $table->timestamps();
 

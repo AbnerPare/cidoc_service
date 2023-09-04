@@ -21,10 +21,8 @@ class RapportController extends Controller {
     public function stor( Request $request ) {
 
         $request->validate( [
-            'Titre' => 'required',
-            'Localité' => 'required',
-            'Durabilité' => 'required',
-            'Département' => 'required',
+            'Description' => 'required',
+            'Thématique' => 'required',
             'pdf_file' => 'required|mimes:pdf,odt,txt,docx,ppt,pptx,doc|max:10240',
         ] );
 
@@ -38,10 +36,8 @@ class RapportController extends Controller {
         }
 
         $user = new Rapport;
-        $user->Titre = $request->input( 'Titre' );
-        $user->Localité = $request->input( 'Localité' );
-        $user->Durabilité = $request->input( 'Durabilité' );
-        $user->Département = $request->input( 'Département' );
+        $user->Description = $request->input( 'Description' );
+        $user->Thématique = $request->input( 'Thématique' );
         $user->pdf_path = $pdfPath;
         // Utilisez la variable $pdfPath générée précédemment
         $user->save();

@@ -7,26 +7,12 @@
     Accueil
 @endsection
 
-@push('style')
-    <style type="text/css">
-        .my-active span {
-            background-color: #5cb85c !important;
-            color: white !important;
-            border-color: #5cb85c !important;
-        }
-
-        ul.pager>li {
-            display: inline-flex;
-            padding: 5px;
-        }
-    </style>
-@endpush
-
 
 
 {{-- debut contenu --}}
 @section('contenu')
     <!-- Carousel Start -->
+
     <div id="carousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -64,34 +50,77 @@
 
 
 
-    <h1 style="text-align: center">A propos</h1>
-    <hr>
-    <h2 class="action">Les Actions en cours</h2>
 
+    <!-- Carousel Start -->
+
+
+    <h1 id="Projects" class="text-white">.<br></h1>
     <a href="{{ route('resumes.ajouter') }}" class="btn btn-success btn-xs py-0 float-end">Ajouter</a>
+    <h2 class="action " id="Projects" style="padding: 10px; font-size:40px">Projects</h2>
 
 
-    <div class="container-fluid">
-        <div class="row">
-            @foreach ($users as $user)
-                <div class="col-md-2 mt-3 bg-success"
-                    style="border-bottom-right-radius: 20px; border-top-right-radius: 50px; border:solid 10px white">
-                    <div class="card" style="border-top-right-radius: 50px; border:solid 5px rgb(64, 170, 64)">
-                        <div class="card-body">
-                            <h6 class="bg-success text-black p-2">{{ $user['Département'] }}</h6>
-                            <img src="img/logo.png" class="card-img-top" alt="...">
-                            <div>
-                                <p style="color: black">Titre: {{ $user['Titre'] }} <br>
-                                    Localité: {{ $user['Localité'] }}<br>
-                                    Durabilité: {{ $user['Durabilité'] }}</p><br>
-                                <a href="{{ asset('storage/' . $user->pdf_path) }}"target="_blank"
-                                    class="btn btn-info">Ouvrir</a>
-                            </div>
-                        </div>
-                    </div>
+
+
+
+    <div class="container" style="width: 800px">
+        <div class="row bg-success">
+            <div class="col">
+                <div class="form-group">
+                    <label for="filter" class="text-white"> <h5> Filtrer par Thématique :</h5></label>
+                    <select class="form-control" id="filter">
+                        <option value="all">Toutes les thématiques</option>
+                        <option value="Actions DED">Actions DED</option>
+                        <option value="Actions DHC">Actions DHC</option>
+                        <option value="Action Protection">Action Protection</option>
+                        <option value="Actions administrative">Actions administrative</option>
+                        <option value="Actions logistique">Actions logistique</option>
+                    </select>
                 </div>
-            @endforeach
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="filt" class="text-white"> <h5>Filtrer par Etat :</h5> </label>
+                    <select class="form-control" id="filt">
+                        <option value="all">Tous les Etats</option>
+                        <option value="En cours">En cours</option>
+                        <option value="déjà exécutée">déjà exécutée</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </div>
+
+
+
+    <div class="container-fluid" id="filteredUsers">
+        <div class="container-fluid">
+            <div class="row" id="user-list">
+                @foreach ($users as $user)
+                    <div class="col-md-2 mt-3 bg-success"
+                        style="border-bottom-right-radius: 20px; border-top-right-radius: 50px; border:solid 10px white">
+                        <div style="border-top-right-radius: 50px">
+                            <div class="card-body">
+                                <h6 class=" text-black span-thematique"
+                                    style="background: white; border-radius: 10px; text-align: center">
+                                    {{ $user['Thématique'] }}
+                                </h6>
+                                <p class="span-etat"
+                                    style="background: rgb(106, 4, 4); padding: 2px; border-radius: 20px; text-align: center; color: white">
+                                    {{ $user['etat'] }}
+                                </p>
+                                <img src="img/logo.png" alt="..." width="100">
+                                    <p style="color: white">
+                                        {{ $user['Description'] }}
+                                    </p>
+                            </div>
+                        </div>
+                        <a href="{{ asset('storage/' . $user->pdf_path) }}"target="_blank"
+                            class="btn btn-info pb-0">Ouvrir</a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
     {{-- fin contenu --}}
 @endsection

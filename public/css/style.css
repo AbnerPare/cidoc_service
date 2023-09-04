@@ -44,7 +44,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-    color: #aa9166;
+    color: #c09854;
     outline: none;
     text-decoration: none;
 }
@@ -76,7 +76,7 @@ a:focus {
 } */
 
 .back-to-top:hover {
-    color: #aa9166;
+    color: #c09854;
     background: #121518;
 }
 
@@ -120,7 +120,7 @@ a:focus {
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
     color:white;
-    background-color: #a6741d;
+    background-color: #c09854;
     transition: none;
     border-radius:10px;
 }
@@ -134,7 +134,7 @@ a:focus {
 
 .nav-bar .btn {
     color: #ffffff;
-    border: 2px solid #aa9166;
+    border: 2px solid #c09854;
     border-radius: 0;
 }
 
@@ -165,6 +165,9 @@ a:focus {
         font-size: 15px;
         text-transform: uppercase;
     }
+}
+.dropdown-item{
+    color: white;
 }
 
 @media (max-width: 1010px) {   
@@ -310,11 +313,11 @@ a:focus {
 /* debut contenu */
 
 .action{
-    background-color: green;
+    background-color: #28a745;
     color: white;
     text-align: center;
     border-radius: 5px;
-    border: solid 2px black;
+    border: solid 2px #a6741d;
 }
 
 
@@ -329,7 +332,7 @@ a:focus {
     max-width: 900px;
     margin: 45px auto -140px auto;
     padding: 30px 15px;
-    background: #a6741d;
+    background: #c09854;
     z-index: 1;
 }
 
@@ -363,16 +366,16 @@ a:focus {
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
-    color: #aa9166;
-    background: #121518;
+    color: white;
+    background: black;
     border-radius: 0;
-    border: 2px solid #aa9166;
+    border: 2px solid #c09854;
     transition: .3s;
 }
 
 .newsletter .btn:hover {
-    color: #121518;
-    background: #aa9166;
+    color: white;
+    background: #28a745;
 }
 
 
@@ -383,7 +386,7 @@ a:focus {
     position: relative;
     margin-top: 45px;
     padding-top: 180px;
-    background: #121518;
+    background: #28a745;
     color: #ffffff;
 }
 
@@ -402,7 +405,7 @@ a:focus {
     margin-bottom: 30px;
     font-size: 25px;
     font-weight: 600;
-    color: #a6741d;
+    color: #c09854;
 }
 
 .footer .footer-link a {
@@ -449,7 +452,7 @@ a:focus {
 }
 
 .footer .footer-social a:hover i {
-    color: #a6741d;
+    color: #c09854;
 }
 
 .footer .footer-menu .f-menu {

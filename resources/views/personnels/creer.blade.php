@@ -14,7 +14,7 @@
 @section('contenu')
     <div class="container "><br>
         <div class="row justify-content-center ">
-            <div class="col-md-10 bg-success" style="border-radius: 20px ; border:solid 10px rgb(64, 170, 64)">
+            <div class="col-md-8 bg-success" style="border-radius: 20px ; border:solid 10px rgb(64, 170, 64)">
                 <div class="card" style="border-radius: 20px ">
                     <div class="card-header bg-success text-center" style="color:#f1f7fa; font-weight:bold">
                        <h4> Ajouter le resumé D'une action en cours</h4>
@@ -98,13 +98,13 @@
 
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label">Statut de présence</label>
-                                <div class="col-sm-9">
+                                <div class="col-sm-9 text-center">
                                     <select class="form-control" name="Statut_de_présence">
                                         <option value="" aria-placeholder="Sélectionnez un statut"></option>
                                         <option value="Disponiple" >Disponiple</option>
                                         <option value="En mission" >En mission</option>
                                         <option value="En congé">En congé</option>
-                                        <option value="Autres raisons d'indisponibilité">Autres raisons d'indisponibilité</option>
+                                        <option value="Non disponible">Non disponible</option>
                                     </select>
                                     @error('Département')
                                         <span class="invalid-feedback" role="alert">
@@ -113,6 +113,21 @@
                                     @enderror
                                 </div>
                             </div>
+
+
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">raison</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="raison" placeholder="raison"
+                                        @error('raison') is-invalid @enderror>
+                                    @error('raison')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong >{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
 
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label">Image</label>
