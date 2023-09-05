@@ -16,10 +16,6 @@ class CidocController extends Controller {
         return view( 'forum' );
     }
 
-    public  function mission() {
-        return view( 'mission' );
-    }
-
     public  function attestation() {
         return view( 'attestation' );
     }

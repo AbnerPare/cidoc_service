@@ -4,6 +4,7 @@ use App\Http\Controllers\AjoutController;
 use App\Http\Controllers\RapportController;
 use App\Http\Controllers\PersonnelController;
 use App\Http\Controllers\ResumeController;
+use App\Http\Controllers\MissionController;
 use App\Http\Controllers\CidocController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -41,6 +42,9 @@ Route::post('/rapport', [RapportController::class, 'stor'])->name('rapports.stor
 
 
 
+Route::get('/mission', [MissionController::class, 'mission'])->name('missions.mission');      
+Route::get('/ordre', [MissionController::class, 'ordre'])->name('missions.ordre');      
+Route::post('/mission', [MissionController::class, 'store1'])->name('missions.store1');      
 
 
 
@@ -59,8 +63,6 @@ Route::put('/{id}', [PersonnelController::class, 'update'])->name('personnels.up
 
 
 Route::get('/forum', [CidocController::class, 'forum']);
-
-Route::get('/mission', [CidocController::class, 'mission']);
 
 Route::get('/conge', [CidocController::class, 'conge']);
 

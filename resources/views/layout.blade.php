@@ -262,27 +262,30 @@
 
 
 
+
+
 {{-- script du filtre du statu de presence--}}
 
 <script>
     $(document).ready(function () {
-        $('#statut-filter').change(function () {
-            var selectedStatut = $(this).val();
-            var rows = $('.table tbody tr');
+    $('input[name="statut-filter"]').change(function () {
+        var selectedStatut = $(this).val();
+        var rows = $('.table tbody tr');
 
-            rows.each(function () {
-                var row = $(this);
-                var statutCell = row.find('.statut-cell');
-                var statutText = statutCell.text().trim();
+        rows.each(function () {
+            var row = $(this);
+            var statutCell = row.find('.statut-cell');
+            var statutText = statutCell.text().trim();
 
-                if (selectedStatut === 'all' || selectedStatut === statutText) {
-                    row.show(); // Affichez la ligne si le filtre correspond
-                } else {
-                    row.hide(); // Masquez la ligne sinon
-                }
-            });
+            if (selectedStatut === 'all' || selectedStatut === statutText) {
+                row.show(); // Affichez la ligne si le filtre correspond
+            } else {
+                row.hide(); // Masquez la ligne sinon
+            }
         });
     });
+});
+
 </script>
 
 

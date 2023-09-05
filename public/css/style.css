@@ -317,7 +317,6 @@ a:focus {
     color: white;
     text-align: center;
     border-radius: 5px;
-    border: solid 2px #a6741d;
 }
 
 
@@ -332,8 +331,9 @@ a:focus {
     max-width: 900px;
     margin: 45px auto -140px auto;
     padding: 30px 15px;
-    background: #c09854;
+    background: black;
     z-index: 1;
+    color: white;
 }
 
 .newsletter .section-header {
@@ -353,7 +353,7 @@ a:focus {
 
 .newsletter input {
     height: 50px;
-    border: 2px solid #121518;
+    border: 2px solid green;
     border-radius: 0;
 }
 
@@ -369,7 +369,7 @@ a:focus {
     color: white;
     background: black;
     border-radius: 0;
-    border: 2px solid #c09854;
+    border: 2px solid green;
     transition: .3s;
 }
 

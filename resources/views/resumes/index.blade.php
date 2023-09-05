@@ -54,13 +54,13 @@
     <!-- Carousel Start -->
 
 
-    <h1 id="Projects" class="text-white">.<br></h1>
-    <a href="{{ route('resumes.ajouter') }}" class="btn btn-success btn-xs py-0 float-end">Ajouter</a>
-    <h2 class="action " id="Projects" style="padding: 10px; font-size:40px">Projects</h2>
-
-
-
-
+    <h1 id="Projects" class="text-white">.<br><br></h1>
+    <a href="{{ route('resumes.ajouter') }}" class="btn btn-info btn-xs py-0 float-end">Ajouter un nouveau document</a>
+    
+    
+    <div class="bg-success text-center text-white">
+    
+    <h2 id="Projects" style="font-size:40px">Projects</h2>
 
     <div class="container" style="width: 800px">
         <div class="row bg-success">
@@ -89,7 +89,7 @@
             </div>
         </div>
     </div>
-
+</div>
 
 
     <div class="container-fluid" id="filteredUsers">
