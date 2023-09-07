@@ -14,15 +14,14 @@ class MissionController extends Controller {
     //
 
     public function mission() {
-        $users = Mission::all();
+        $user = Mission::all();
         // $users = Mission::where( 'etat', 'en attente' )->get();
-        return view( 'missions.mission', [ 'users' => $users ] );
+        return view( 'missions.mission', [ 'users' => $user ] );
     }
 
     public function ordre() {
-        $missions = Demande::all();
-        $directeurs = Directeur::all();
-        return view( 'missions.ordre', compact( 'missions', 'directeurs' ) );
+        $users = Mission::all();
+        return view( 'missions.ordre', compact( 'users', ) );
     }
 
     public function store1( Request $request ) {
@@ -79,29 +78,4 @@ class MissionController extends Controller {
         return redirect()->route( 'missions.mission' )->with( 'success', 'La demande de mission a été soumise avec succès.' );
 
     }
-
-    public function indexDirecteur() {
-        // Affiche la liste des demandes de mission en attente de validation par le directeur
-        $demandes = Mission::where( 'etat', 'en attente' )->get();
-        return view( 'missions.directeur.index', compact( 'missions' ) );
-    }
-
-    public function validateDemande( Request $request, $id ) {
-        // Valide la demande de mission
-        $demande = Mission::findOrFail( $id );
-        $demande->etat = 'validée';
-        $demande->save();
-
-        return redirect()->route( 'directeur.demandes' )->with( 'success', 'La demande de mission a été validée.' );
-    }
-
-    public function rejectDemande( Request $request, $id ) {
-        // Rejette la demande de mission
-        $demande = Mission::findOrFail( $id );
-        $demande->etat = 'rejetée';
-        $demande->save();
-
-        return redirect()->route( 'directeur.demandes' )->with( 'warning', 'La demande de mission a été rejetée.' );
-    }
-
 }

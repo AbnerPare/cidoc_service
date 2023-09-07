@@ -77,9 +77,9 @@
                                 <a href="#" class="nav-link dropdown-toggle"
                                     data-toggle="dropdown">Documentation</a>
                                 <div class="dropdown-menu">
-                                    <a href="blog.html" class="dropdown-item"> Fiche de congé</a>
-                                    <a href="single.html" class="dropdown-item">Ordre de mission</a>
-                                    <a href="blog.html" class="dropdown-item">Contrats</a>
+                                    <a href="{{ URL::to('/soumissions/create') }}" class="dropdown-item"> Fiche de congé *create</a>
+                                    <a href="{{ URL::to('/soumissions/show') }}" class="dropdown-item">Ordre de mission *index</a>
+                                    <a href="{{ URL::to('/soumissions/valider/{soumission}') }}" class="dropdown-item">Contrats *valider</a>
                                     <a href="{{ URL::to('/rapport') }}" class="dropdown-item">Rapports de projets</a>
                                 </div>
                             </div>

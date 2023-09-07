@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AjoutController;
+use App\Http\Controllers\SoumissionController;
 use App\Http\Controllers\RapportController;
 use App\Http\Controllers\PersonnelController;
 use App\Http\Controllers\ResumeController;
@@ -44,9 +45,6 @@ Route::post('/rapport', [RapportController::class, 'stor'])->name('rapports.stor
 Route::get('/mission', [MissionController::class, 'mission'])->name('missions.mission');      
 Route::get('/ordre', [MissionController::class, 'ordre'])->name('missions.ordre');      
 Route::post('/mission', [MissionController::class, 'store1'])->name('missions.store1');      
-Route::get('/directeur', [MissionController::class, 'indexDirecteur'])->name('missions.directeur');
-Route::post('/demandes/{id}/valider', [MissionController::class, 'validateDemande'])->name('missions.valider');
-Route::post('/demandes/{id}/rejeter', [MissionController::class, 'rejectDemande'])->name('missions.rejeter');
 
 
 
@@ -76,3 +74,17 @@ Route::get('/admin', [CidocController::class, 'admin']);
 
 
 
+// routes/web.php
+
+// Création de demande
+
+
+Route::get('/soumissions/create', [SoumissionController::class, 'create'])->name('soumissions.create');
+Route::post('/soumissions', [SoumissionController::class, 'store'])->name('soumissions.store');;
+
+// Affichage des demandes soumises
+Route::get('/soumissions/show', [SoumissionController::class, 'index'])->name('soumissions.index');;
+
+// Validation des demandes par le directeur
+Route::get('/soumissions/valider/{soumission}', [SoumissionController::class, 'valider'])->name('soumissions.valider');;
+Route::put('/soumissions/{soumission}/valider', [SoumissionController::class, 'Soumission'])->name('soumissions.validerSoumission');;
