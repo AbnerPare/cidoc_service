@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('Nom');
             $table->string('Prénom');
             $table->string('Email')->unique();
-            $table->string('téléphone');
-            $table->string('département');
+            $table->string('Téléphone');
+            $table->string('Département');
             $table->string('Statut_de_présence');
-            $table->string('raison');
+            $table->string('Precision');
             $table->string('image');
             $table->timestamps();
 

@@ -41,10 +41,12 @@ Route::get('/ajout', [RapportController::class, 'ajout'])->name('rapports.ajout'
 Route::post('/rapport', [RapportController::class, 'stor'])->name('rapports.stor');      
 
 
-
 Route::get('/mission', [MissionController::class, 'mission'])->name('missions.mission');      
 Route::get('/ordre', [MissionController::class, 'ordre'])->name('missions.ordre');      
 Route::post('/mission', [MissionController::class, 'store1'])->name('missions.store1');      
+Route::get('/directeur', [MissionController::class, 'indexDirecteur'])->name('missions.directeur');
+Route::post('/demandes/{id}/valider', [MissionController::class, 'validateDemande'])->name('missions.valider');
+Route::post('/demandes/{id}/rejeter', [MissionController::class, 'rejectDemande'])->name('missions.rejeter');
 
 
 

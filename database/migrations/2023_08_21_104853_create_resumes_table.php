@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('Description');
             $table->string('Thématique');
             $table->string('pdf_path')->nullable();
-            $table->string('etat');
+            $table->string('Etat');
             $table->timestamps();
         });
     }

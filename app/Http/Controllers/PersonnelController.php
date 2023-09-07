@@ -27,10 +27,10 @@ class PersonnelController extends Controller {
             'Nom' => 'required',
             'Prénom' => 'required',
             'Email' => 'required|email|unique:personnels', // Assurez-vous que le nom de la table est correct
-            'téléphone' => 'required',
-            'département' => 'required',
+            'Téléphone' => 'required',
+            'Département' => 'required',
             'Statut_de_présence' => 'required',
-            'raison' => 'required',
+            'Precision' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:61440'
         ] );
 
@@ -41,10 +41,10 @@ class PersonnelController extends Controller {
             'Nom' => $validatedData[ 'Nom' ],
             'Prénom' => $validatedData[ 'Prénom' ],
             'Email' => trim( $validatedData[ 'Email' ] ),
-            'téléphone' => $validatedData[ 'téléphone' ],
-            'département' => $validatedData[ 'département' ],
+            'Téléphone' => $validatedData[ 'Téléphone' ],
+            'Département' => $validatedData[ 'Département' ],
             'Statut_de_présence' => $validatedData[ 'Statut_de_présence' ],
-            'raison' => $validatedData[ 'raison' ],
+            'Precision' => $validatedData[ 'Precision' ],
             'image' => $fileName, // Enregistrez le nom du fichier image dans la base de données
         ] );
 
@@ -70,10 +70,10 @@ class PersonnelController extends Controller {
             'Nom' => 'required',
             'Prénom' => 'required',
             'Email' => 'required|email|unique:personnels,Email,'.$id,
-            'téléphone' => 'required',
-            'département' => 'required',
+            'Téléphone' => 'required',
+            'Département' => 'required',
             'Statut_de_présence' => 'required',
-            'raison' => 'required',
+            'Precision' => 'required',
             'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:61440', // Adjusted max size and added 'sometimes'
         ] );
 
@@ -91,10 +91,10 @@ class PersonnelController extends Controller {
         $user->Nom = $validatedData[ 'Nom' ];
         $user->Prénom = $validatedData[ 'Prénom' ];
         $user->Email = trim( $validatedData[ 'Email' ] );
-        $user->téléphone = $validatedData[ 'téléphone' ];
-        $user->département = $validatedData[ 'département' ];
+        $user->Téléphone = $validatedData[ 'Téléphone' ];
+        $user->Département = $validatedData[ 'Département' ];
         $user->Statut_de_présence = $validatedData[ 'Statut_de_présence' ];
-        $user->raison = $validatedData[ 'raison' ];
+        $user->Precision = $validatedData[ 'Precision' ];
         $user->save();
 
         return redirect()->route( 'personnels.perso' )->with( [

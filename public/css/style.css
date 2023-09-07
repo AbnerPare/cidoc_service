@@ -330,7 +330,7 @@ a:focus {
     position: relative;
     max-width: 900px;
     margin: 45px auto -140px auto;
-    padding: 30px 15px;
+    padding: 20px 10px;
     background: black;
     z-index: 1;
     color: white;
@@ -385,7 +385,7 @@ a:focus {
 .footer {
     position: relative;
     margin-top: 45px;
-    padding-top: 180px;
+    padding-top: 100px;
     background: #28a745;
     color: #ffffff;
 }
@@ -405,7 +405,7 @@ a:focus {
     margin-bottom: 30px;
     font-size: 25px;
     font-weight: 600;
-    color: #c09854;
+    color: white;
 }
 
 .footer .footer-link a {
@@ -452,7 +452,7 @@ a:focus {
 }
 
 .footer .footer-social a:hover i {
-    color: #c09854;
+    color: blue;
 }
 
 .footer .footer-menu .f-menu {

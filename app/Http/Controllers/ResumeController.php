@@ -23,8 +23,8 @@ class ResumeController extends Controller {
         $request->validate( [
             'Description' => 'required',
             'Thématique' => 'required',
+            'Etat' => 'required',
             'pdf_file' => 'required|mimes:pdf,odt,txt,docx,ppt,pptx,doc|max:10240',
-            'etat' => 'required',
         ] );
 
         // Gestion du fichier PDF
@@ -39,7 +39,7 @@ class ResumeController extends Controller {
         $user = new Resume;
         $user->Description = $request->input( 'Description' );
         $user->Thématique = $request->input( 'Thématique' );
-        $user->etat = $request->input( 'etat' );
+        $user->Etat = $request->input( 'Etat' );
         $user->pdf_path = $pdfPath;
         // Utilisez la variable $pdfPath générée précédemment
         $user->save();

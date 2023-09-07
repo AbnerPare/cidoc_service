@@ -22,7 +22,7 @@
                     @if ($errors->any())
                         {!! implode('', $errors->all('<div>:message</div>')) !!}
                     @endif
-                    <div class="card-body" >
+                    <div class="card-body" style="background-color: rgb(206, 206, 195)">
                         <form class="w-px-500 p-3 p-md-3" action="{{ route('rapports.stor') }}" method="post"
                             enctype="multipart/form-data" >
                             @csrf
@@ -48,7 +48,7 @@
                                         <option value="" aria-placeholder="">Sélectionnez une thématique</option>
                                         <option value="Actions DED">Actions DED</option>
                                         <option value="Actions DHC">Actions DHC</option>
-                                        <option value="Action Protection">Action Protection</option>
+                                        <option value="Actions protection">Actions protection</option>
                                         <option value="Actions administrative">Actions administrative</option>
                                         <option value="Actions logistique">Actions logistique</option>
                                     </select>

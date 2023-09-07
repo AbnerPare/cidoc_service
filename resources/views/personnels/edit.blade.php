@@ -17,7 +17,7 @@
                     @if ($errors->any())
                         {!! implode('', $errors->all('<div>:message</div>')) !!}
                     @endif
-                    <div class="card-body">
+                    <div class="card-body" style="background-color: rgb(206, 206, 195)">
                         <form class="w-px-500 p-3 p-md-3" action="{{ route('personnels.update', $user->id) }}"
                             method="POST" enctype="multipart/form-data">
                             @csrf
@@ -65,9 +65,9 @@
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label">Téléphone</label>
                                 <div class="col-sm-9">
-                                    <input type="tel" class="form-control" name="téléphone" 
-                                        value="{{ $user->téléphone }}" @error('téléphone') is-invalid @enderror>
-                                    @error('téléphone')
+                                    <input type="tel" class="form-control" name="Téléphone" 
+                                        value="{{ $user->Téléphone }}" @error('Téléphone') is-invalid @enderror>
+                                    @error('Téléphone')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -78,10 +78,10 @@
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label">Département</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="département"
+                                    <input type="text" class="form-control" name="Département"
                                       value="{{ $user->département }}"
-                                        @error('département') is-invalid @enderror>
-                                    @error('département')
+                                        @error('Département') is-invalid @enderror>
+                                    @error('Département')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -97,7 +97,7 @@
                                         <option value="Disponible" @if ($user->Statut_de_présence === 'Disponible') selected @endif>Disponible</option>
                                         <option value="En mission" @if ($user->Statut_de_présence === 'En mission') selected @endif>En mission</option>
                                         <option value="En congé" @if ($user->Statut_de_présence === 'En congé') selected @endif>En congé</option>
-                                        <option value="Autre" @if ($user->Statut_de_présence === 'Autre') selected @endif>Autre</option>
+                                        <option value="Non disponible" @if ($user->Statut_de_présence === 'Non disponible') selected @endif>Autre</option>
                                     </select>
                                     @error('Statut_de_présence')
                                         <span class="invalid-feedback" role="alert">
@@ -109,11 +109,11 @@
 
 
                             <div class="row mb-3">
-                                <label class="col-sm-3 col-form-label">raison</label>
+                                <label class="col-sm-3 col-form-label">Precision</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="raison" placeholder="raison"
-                                        @error('raison') is-invalid @enderror>
-                                    @error('raison')
+                                    <input type="text" class="form-control" name="Precision" placeholder="Precision"
+                                        @error('Precision') is-invalid @enderror>
+                                    @error('Precision')
                                         <span class="invalid-feedback" role="alert">
                                             <strong >{{ $message }}</strong>
                                         </span>

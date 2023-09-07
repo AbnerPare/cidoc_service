@@ -49,28 +49,31 @@
                         <thead class="bg-success text-white">
                             <tr>
                                 <th>
-                                    <h5>Photo</h5>
+                                    <h6>Photo</h6>
                                 </th>
                                 <th>
-                                    <h5>Nom</h5>
+                                    <h6>Nom</h6>
                                 </th>
                                 <th>
-                                    <h5>Prénom</h5>
+                                    <h6>Prénom</h6>
                                 </th>
                                 <th>
-                                    <h5>Email</h5>
+                                    <h6>Email</h6>
                                 </th>
                                 <th>
-                                    <h5>Téléphone</h5>
+                                    <h6>Téléphone</h6>
                                 </th>
                                 <th>
-                                    <h5>Département</h5>
+                                    <h6>Département</h6>
                                 </th>
                                 <th>
-                                    <h5>Statut de présence</h5>
+                                    <h6>Statut de présence</h6>
                                 </th>
                                 <th>
-                                    <h5>Actions</h5>
+                                    <h6>Plus de precision</h6>
+                                </th>
+                                <th>
+                                    <h6>Actions</h6>
                                 </th>
 
                             </tr>
@@ -83,7 +86,7 @@
                                             style=" border:solid 5px green; border-radius:50px ">
                                     </td>
                                     <td>
-                                        <h4 style="font-size: 20px; text-transform: uppercase;">{{ $user->Nom }}</h4>
+                                        <h5 style="font-size: 20px; text-transform: uppercase;">{{ $user->Nom }}</h5>
                                     </td>
                                     <td>
                                         <h6 style="font-size: 20px; text-transform: capitalize;">{{ $user->Prénom }}</h6>
@@ -94,16 +97,17 @@
                                     </td>
 
                                     <td>
-                                        <a href="tel:{{ $user->téléphone }}">{{ $user->téléphone }}</a>
+                                        <a href="tel:{{ $user->Téléphone }}">{{ $user->Téléphone }}</a>
                                     </td>
                                     <td>
-                                        <h6 style="font-size: 20px">{{ $user->département }}</h6>
+                                        <h6 style="font-size: 20px">{{ $user->Département }}</h6>
                                     </td>
-
                                     <td class="statut-cell @if ($user->Statut_de_présence == 'Disponible') bg-success @elseif ($user->Statut_de_présence == 'En mission') bg-info @elseif ($user->Statut_de_présence == 'En congé') bg-warning @else bg-danger @endif text-white">
                                         {{ $user->Statut_de_présence }} <br> 
                                     </td>                                                                                                                    
-
+                                    <td>
+                                        <h6 style="font-size: 20px">{{ $user->Precision }}</h6>
+                                    </td>
                                     <td>
                                         <a href="{{ route('personnels.edit', $user->id) }}"
                                             class="btn btn-primary">Modifier</a>

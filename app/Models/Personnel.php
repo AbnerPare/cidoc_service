@@ -12,10 +12,10 @@ class Personnel extends Model {
         'Nom',
         'Prénom',
         'Email',
-        'téléphone',
-        'département',
+        'Téléphone',
+        'Département',
         'Statut_de_présence',
-        'raison',
+        'Precision',
         'image' // Utilisez le même nom de champ que dans le contrôleur
     ];
 }

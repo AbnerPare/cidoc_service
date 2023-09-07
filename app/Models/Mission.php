@@ -9,23 +9,36 @@ class Mission extends Model {
     use HasFactory;
 
     protected $fillable = [
-        'date',
-        'numéro1',
-        'numéro2',
-        'numéro3',
-        'project',
-        'objet',
-        'lieu',
-        'région',
-        '1personne',
-        '2personne',
-        '3personne',
-        'conducteur',
-        'tel-cond',
-        'véhicule',
-        'immatriculation',
+        'Date_du_remplissage',
+        'N°1',
+        'N°2',
+        'N°3',
+        'Partenaire',
+        'Project',
+        'Objet',
+        'Lieu',
+        'Région',
+        'Prémière',
+        'Deuxième',
+        'Troisième',
+        'Conducteur',
+        'Tel-cond',
+        'Véhicule',
+        'Immatriculation',
         'Départ',
         'Rétour',
+        'mission_id',
+        'etat',
+        'directeur_id',
+        'Commentaire',
     ];
+
+    public function demande() {
+        return $this->belongsTo( Mission::class, 'mission_id' );
+    }
+
+    public function directeur() {
+        return $this->belongsTo( Directeur::class, 'directeur_id' );
+    }
 
 }

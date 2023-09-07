@@ -13,24 +13,37 @@ return new class extends Migration
     {
         Schema::create('missions', function (Blueprint $table) {
             $table->id();
-            $table->string('date');
-            $table->string('numéro1');
-            $table->string('numéro2');
-            $table->string('numéro3');
-            $table->string('project');
-            $table->string('objet');
-            $table->string('lieu');
-            $table->string('région');
-            $table->string('1personne');
-            $table->string('2personne');
-            $table->string('3personne');
-            $table->string('conducteur');
-            $table->string('tel-cond');
-            $table->string('véhicule');
-            $table->string('immatriculation');
+            $table->unsignedBigInteger('mission_id'); // L'ID de la mission associée
+            $table->string('etat'); // État de la demande (en attente, validée, rejetée, etc.)
+            $table->unsignedBigInteger('Directeur_id'); // L'ID du directeur responsable de la validation
+            $table->text('Commentaire')->nullable(); // Commentaire du directeur (optionnel)
+            $table->string('Date_du_remplissage');
+            $table->string('N°1');
+            $table->string('N°2');
+            $table->string('N°3');
+            $table->string('Partenaire');
+            $table->string('Project');
+            $table->string('Objet');
+            $table->string('Lieu');
+            $table->string('Région');
+            $table->string('Prémière');
+            $table->string('Deuxième');
+            $table->string('Troisième');
+            $table->string('Conducteur');
+            $table->string('Tel-cond');
+            $table->string('Véhicule');
+            $table->string('Immatriculation');
             $table->string('Départ');
             $table->string('Rétour');
               $table->timestamps();
+
+
+              $table->foreign('mission_id')->references('id')->on('missions');
+            $table->foreign('directeur_id')->references('id')->on('directeurs');
+
+            // Index
+            $table->index(['mission_id', 'directeur_id']);
+
         });
     }
 

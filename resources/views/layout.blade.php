@@ -35,7 +35,7 @@
         <!-- Nav Bar Start -->
         <div class="nav-bar ">
             <div class="container-fluid ">
-                <nav  class="navbar navbar-expand-lg  navbar-dark ">
+                <nav class="navbar navbar-expand-lg  navbar-dark ">
 
                     <a href="{{ URL::to('/') }}" class="mr-5">
                         <img src="img/logo.png" alt="Logo" width="80px" height="auto">
@@ -53,9 +53,11 @@
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Le
                                     personnel</a>
                                 <div class="dropdown-menu">
-                                    <a href="{{ URL::to('/mission') }}" class="dropdown-item"> Ordres de missions</a>
+                                    <a href="{{ URL::to('/ordre') }}" class="dropdown-item"> Ordres de missions</a>
                                     <a href="{{ URL::to('/conge') }}" class="dropdown-item"> Demandes de congés</a>
                                     <a href="{{ URL::to('/attestation') }}" class="dropdown-item">Les attestations</a>
+                                    <a href="#" class="dropdown-item">Demande de fonds</a>
+                                    <a href="#" class="dropdown-item">autorisation d'absence</a>
                                     <a href="{{ URL::to('/perso') }}" class="dropdown-item">Personnel disponible</a>
                                 </div>
                             </div>
@@ -92,11 +94,10 @@
                                 </div>
                             </div>
                             <a href="{{ URL::to('/forum') }}" class="nav-item nav-link">Forum</a>
-                            <a href="{{ URL::to('/admin') }}" class="nav-item nav-link">admin</a>
+                            <a href="{{ URL::to('/mission') }}" class="nav-item nav-link">admin</a>
                             {{-- bouton de recherche --}}
                             <form class="d-flex justify-content-end" role="search">
-                                <input class="form-control me-3" type="search" placeholder="Rechercher ici"
-                                    required>
+                                <input class="form-control me-3" type="search" placeholder="Rechercher ici" required>
                                 <button class="me-2  btn-outline-success" type="submit">Rechercher</button>
                             </form>
                         </div>
@@ -139,21 +140,16 @@
 
 
     <!-- Footer Start -->
-    <div class="footer">
+    <div class="footer text-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-lg-4">
                     <div class="footer-about">
-                        <h2>Qui sommes-nous</h2>
-                        <p style="text-align: justify">
-                            Le « Centre d’Information et de Documentation Citoyennes – (Cidoc) » est une association
-                            jouissant, aux termes du Récépissé N°2003-473/MATD/SG/DGLPAP/DOASOC du 9 septembre 2003,
-                            de la reconnaissance officielle. Cette reconnaissance a été renouvelée en 2011 aux
-                            termes du Récépissé N°2011-883/MATDS/SG/DGLPAP/DOASOC du 08 juillet 2011, puis en 2019
-                            aux termes du Récépissé N° : N00000527501 du 26 mars 2019 conformément à la Loi
-                            n°064-2015/CNT du 20 octobre 2015 portant liberté d’association au Burkina Faso.
-
-                        </p>
+                        <h2>Trouvez-nous</h2>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.081464266981!2d-1.5497756999999999!3d12.310300699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe2e971bf3dd14c3%3A0xd58f45de062c1865!2sCidoc%20-%20cit%C3%A9%20Socogib%20Ouaga2000%20Villa%20N%C2%B0348!5e0!3m2!1sfr!2sbf!4v1693947490694!5m2!1sfr!2sbf"
+                            width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-8">
@@ -208,90 +204,107 @@
 
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     </div>
-   
-{{-- script du filtre des thématiques--}}
-<script>
-    $(document).ready(function () {
-        $('#filter').change(function () {
-            var selectedThematique = $(this).val();
 
-            // Sélectionnez ici les éléments que vous souhaitez filtrer en fonction de la thématique.
-            var elements = $('.span-thematique');
-
-            // Parcourez les éléments et appliquez votre logique de filtrage
-            elements.each(function () {
-                var element = $(this);
-                var thematique = element.text().trim();
-
-                // Comparez la thématique de l'élément avec la thématique sélectionnée
-                if (selectedThematique === 'all' || selectedThematique === thematique) {
-                    element.parents('.col-md-2').show(); // Affichez le parent (col-md-2) si le filtre correspond
-                } else {
-                    element.parents('.col-md-2').hide(); // Masquez le parent sinon
-                }
-            });
-        });
-    });
-</script>
-
-{{-- script du filtre des états--}}
-
-<script>
-    $(document).ready(function () {
-        $('#filt').change(function () {
-            var selectedEtat = $(this).val();
-
-            // Sélectionnez ici les éléments que vous souhaitez filtrer en fonction de l'état.
-            var elements = $('.span-etat');
-
-            // Parcourez les éléments et appliquez votre logique de filtrage
-            elements.each(function () {
-                var element = $(this);
-                var etat = element.text().trim();
-
-                // Comparez l'état de l'élément avec l'état sélectionné
-                if (selectedEtat === 'all' || selectedEtat === etat) {
-                    element.parents('.col-md-2').show(); // Affichez le parent (col-md-2) si le filtre correspond
-                } else {
-                    element.parents('.col-md-2').hide(); // Masquez le parent sinon
-                }
-            });
-        });
-    });
-</script>
-
-
-
-
-
-{{-- script du filtre du statu de presence--}}
-
-<script>
-    $(document).ready(function () {
-    $('input[name="statut-filter"]').change(function () {
-        var selectedStatut = $(this).val();
-        var rows = $('.table tbody tr');
-
-        rows.each(function () {
-            var row = $(this);
-            var statutCell = row.find('.statut-cell');
-            var statutText = statutCell.text().trim();
-
-            if (selectedStatut === 'all' || selectedStatut === statutText) {
-                row.show(); // Affichez la ligne si le filtre correspond
-            } else {
-                row.hide(); // Masquez la ligne sinon
-            }
-        });
-    });
-});
-
-</script>
-
-
-
-
+    {{-- script du filtre des thématiques --}}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Sélectionnez les éléments de filtre
+            var filterThematique = document.getElementById("filter");
+            var filterEtat = document.getElementById("filt");
     
+            // Sélectionnez la liste d'utilisateurs
+            var userList = document.getElementById("user-list");
+    
+            // Écoutez les changements dans les filtres
+            filterThematique.addEventListener("change", function() {
+                var selectedThematique = filterThematique.value;
+                var selectedEtat = filterEtat.value;
+    
+                // Parcourez les éléments de la liste d'utilisateurs
+                var users = userList.getElementsByClassName("col-sm-2");
+    
+                for (var i = 0; i < users.length; i++) {
+                    var user = users[i];
+                    var thematique = user.querySelector(".span-thematique").textContent.trim();
+                    var etat = user.querySelector(".span-etat").textContent.trim();
+    
+                    // Affichez ou masquez l'utilisateur en fonction des filtres sélectionnés
+                    if ((selectedThematique === "all" || thematique === selectedThematique) &&
+                        (selectedEtat === "all" || etat === selectedEtat)) {
+                        user.style.display = "block";
+                    } else {
+                        user.style.display = "none";
+                    }
+                }
+            });
+    
+            filterEtat.addEventListener("change", function() {
+                var selectedThematique = filterThematique.value;
+                var selectedEtat = filterEtat.value;
+    
+                var users = userList.getElementsByClassName("col-sm-2");
+    
+                for (var i = 0; i < users.length; i++) {
+                    var user = users[i];
+                    var thematique = user.querySelector(".span-thematique").textContent.trim();
+                    var etat = user.querySelector(".span-etat").textContent.trim();
+    
+                    if ((selectedThematique === "all" || thematique === selectedThematique) &&
+                        (selectedEtat === "all" || etat === selectedEtat)) {
+                        user.style.display = "block";
+                    } else {
+                        user.style.display = "none";
+                    }
+                }
+            });
+        });
+    </script>
+    
+    {{-- script du filtre du statu de presence --}}
+
+    <script>
+        $(document).ready(function() {
+            $('input[name="statut-filter"]').change(function() {
+                var selectedStatut = $(this).val();
+                var rows = $('.table tbody tr');
+
+                rows.each(function() {
+                    var row = $(this);
+                    var statutCell = row.find('.statut-cell');
+                    var statutText = statutCell.text().trim();
+
+                    if (selectedStatut === 'all' || selectedStatut === statutText) {
+                        row.show(); // Affichez la ligne si le filtre correspond
+                    } else {
+                        row.hide(); // Masquez la ligne sinon
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    {{-- fitre du raport de projet --}}
+    <script>
+        $(document).ready(function() {
+            $('input[name="thematique-filter"]').change(function() {
+                var selectedThematique = $(this).val();
+
+                // Affichez tous les éléments avec la classe .col-md-2
+                $('.col-md-2').show();
+
+                // Si une thématique est sélectionnée, masquez les éléments qui ne correspondent pas
+                if (selectedThematique !== "") {
+                    $('.col-md-2').filter(function() {
+                        return $(this).data('thematique') !== selectedThematique;
+                    }).hide();
+                }
+            });
+        });
+    </script>
+
+
+
 
 
 

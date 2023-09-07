@@ -17,6 +17,7 @@ class Resume extends Authenticatable implements MustVerifyEmail {
     protected $fillable = [
         'Description',
         'Thématique',
+        'Etat',
         'pdf_path'
     ];
 

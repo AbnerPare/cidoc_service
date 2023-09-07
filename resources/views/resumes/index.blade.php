@@ -56,48 +56,51 @@
 
     <h1 id="Projects" class="text-white">.<br><br></h1>
     <a href="{{ route('resumes.ajouter') }}" class="btn btn-info btn-xs py-0 float-end">Ajouter un nouveau document</a>
-    
-    
-    <div class="bg-success text-center text-white">
-    
-    <h2 id="Projects" style="font-size:40px">Projects</h2>
 
-    <div class="container" style="width: 800px">
-        <div class="row bg-success">
-            <div class="col">
-                <div class="form-group">
-                    <label for="filter" class="text-white"> <h5> Filtrer par Thématique :</h5></label>
-                    <select class="form-control" id="filter">
-                        <option value="all">Toutes les thématiques</option>
-                        <option value="Actions DED">Actions DED</option>
-                        <option value="Actions DHC">Actions DHC</option>
-                        <option value="Action Protection">Action Protection</option>
-                        <option value="Actions administrative">Actions administrative</option>
-                        <option value="Actions logistique">Actions logistique</option>
-                    </select>
+
+    <div class="bg-success  text-white">
+
+        <h2 id="Projects" style="font-size:40px; text-align:center">Projects</h2>
+
+        <div class="container" style="width: 800px">
+            <div class="row bg-success">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="filter" class="text-white">
+                            <h5> Filtrer par Thématique :</h5>
+                        </label>
+                        <select class="form-control" id="filter">
+                            <option value="all">Toutes les thématiques</option>
+                            <option value="Actions DED">Actions DED</option>
+                            <option value="Actions DHC">Actions DHC</option>
+                            <option value="Action Protection">Action Protection</option>
+                            <option value="Actions administrative">Actions administrative</option>
+                            <option value="Actions logistique">Actions logistique</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="form-group">
-                    <label for="filt" class="text-white"> <h5>Filtrer par Etat :</h5> </label>
-                    <select class="form-control" id="filt">
-                        <option value="all">Tous les Etats</option>
-                        <option value="En cours">En cours</option>
-                        <option value="déjà exécutée">déjà exécutée</option>
-                    </select>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="filt" class="text-white">
+                            <h5>Filtrer par Etat :</h5>
+                        </label>
+                        <select class="form-control" id="filt">
+                            <option value="all">Tous les Etats</option>
+                            <option value="En cours">En cours</option>
+                            <option value="déjà exécutée">déjà exécutée</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
 
     <div class="container-fluid" id="filteredUsers">
         <div class="container-fluid">
             <div class="row" id="user-list">
                 @foreach ($users as $user)
-                    <div class="col-md-2 mt-3 bg-success"
-                        style="border-bottom-right-radius: 20px; border-top-right-radius: 50px; border:solid 10px white">
+                    <div class="col-sm-2 mt-3 bg-success"
+                        style="border-bottom-right-radius: 20px; border-top-right-radius: 50px; border:solid 10px white; position: relative;">
                         <div style="border-top-right-radius: 50px">
                             <div class="card-body">
                                 <h6 class=" text-black span-thematique"
@@ -106,21 +109,22 @@
                                 </h6>
                                 <p class="span-etat"
                                     style="background: rgb(106, 4, 4); padding: 2px; border-radius: 20px; text-align: center; color: white">
-                                    {{ $user['etat'] }}
+                                    {{ $user['Etat'] }}
                                 </p>
                                 <img src="img/logo.png" alt="..." width="100">
-                                    <p style="color: white">
-                                        {{ $user['Description'] }}
-                                    </p>
+                                <p style="color: white">
+                                    {{ $user['Description'] }}
+                                </p>
                             </div>
                         </div>
-                        <a href="{{ asset('storage/' . $user->pdf_path) }}"target="_blank"
-                            class="btn btn-info pb-0">Ouvrir</a>
+                        <a href="{{ asset('storage/' . $user->pdf_path) }}" target="_blank"
+                            class="btn btn-info pb-0" style="position: absolute; top: 95%; left: 50%; transform: translate(-50%, -50%);">Ouvrir</a>
                     </div>
                 @endforeach
             </div>
         </div>
     </div>
+    
 
     {{-- fin contenu --}}
 @endsection

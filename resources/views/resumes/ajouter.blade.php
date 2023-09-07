@@ -10,18 +10,18 @@
         <div class="col-md-7 bg-success" style="border-radius: 20px ; border:solid 10px rgb(64, 170, 64)">
             <div class="card" style="border-radius: 20px ">
                 <div class="card-header bg-success text-center" style="color:#f1f7fa; font-weight:bold">
-                    <h4> Ajouter le résumé D'une action en cours</h4>
+                    <h4> Ajouter le résumé d'une action en cours</h4>
                 </div>
                 @if ($errors->any())
                     {!! implode('', $errors->all('<div>:message</div>')) !!}
                 @endif
-                <div class="card-body">
+                <div class="card-body"style="background-color: rgb(206, 206, 195)">
                     <form class="w-px-500 p-3 p-md-3" action="{{ route('resumes.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label">Description</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="Description" placeholder="Description" @error('Description') is-invalid @enderror maxlength="70">
+                                <input type="text" class="form-control" name="Description" placeholder="Description" @error('Description') is-invalid @enderror maxlength="50">
                                 @error('Description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -29,11 +29,6 @@
                                 @enderror
                             </div>
                         </div>
-
-
-
-
-
 
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label">Thématique</label>
@@ -58,12 +53,12 @@
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label">Etat</label>
                             <div class="col-sm-9">
-                                <select class="form-control" name="etat">
+                                <select class="form-control" name="Etat">
                                     <option value="" aria-placeholder="">Sélectionnez un état</option>
                                     <option value="En cours"> En cours </option>
                                     <option value="déjà exécutée"> déjà exécutée </option>
                                 </select>
-                                @error('etat')
+                                @error('Etat')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
