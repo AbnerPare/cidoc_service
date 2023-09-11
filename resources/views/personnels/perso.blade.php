@@ -38,8 +38,8 @@
             <input class="form-check-input" type="radio" name="statut-filter" id="non-disponible" value="Non disponible">
             <label class="form-check-label" for="non-disponible">Non disponible</label>
         </div>
-        
-        
+
+
 
         <a href="{{ route('personnels.creer') }}" class="btn btn-success btn-xs py-0 float-end">Ajouter</a>
         <div class="row">
@@ -102,9 +102,10 @@
                                     <td>
                                         <h6 style="font-size: 20px">{{ $user->Département }}</h6>
                                     </td>
-                                    <td class="statut-cell @if ($user->Statut_de_présence == 'Disponible') bg-success @elseif ($user->Statut_de_présence == 'En mission') bg-info @elseif ($user->Statut_de_présence == 'En congé') bg-warning @else bg-danger @endif text-white">
-                                        {{ $user->Statut_de_présence }} <br> 
-                                    </td>                                                                                                                    
+                                    <td
+                                        class="statut-cell @if ($user->Statut_de_présence == 'Disponible') bg-success @elseif ($user->Statut_de_présence == 'En mission') bg-info @elseif ($user->Statut_de_présence == 'En congé') bg-warning @else bg-danger @endif text-white">
+                                        {{ $user->Statut_de_présence }} <br>
+                                    </td>
                                     <td>
                                         <h6 style="font-size: 20px">{{ $user->Precision }}</h6>
                                     </td>

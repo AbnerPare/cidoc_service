@@ -13,11 +13,8 @@ return new class extends Migration
     {
         Schema::create('missions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('mission_id'); // L'ID de la mission associée
-            $table->string('etat'); // État de la demande (en attente, validée, rejetée, etc.)
-            $table->unsignedBigInteger('Directeur_id'); // L'ID du directeur responsable de la validation
-            $table->text('Commentaire')->nullable(); // Commentaire du directeur (optionnel)
-            $table->string('Date_du_remplissage');
+            $table->string('Etat')->default(false); // État de la demande (en attente, validée, rejetée, etc.)
+           $table->string('Date_du_remplissage');
             $table->string('N°1');
             $table->string('N°2');
             $table->string('N°3');
@@ -30,20 +27,12 @@ return new class extends Migration
             $table->string('Deuxième');
             $table->string('Troisième');
             $table->string('Conducteur');
-            $table->string('Tel-cond');
+            $table->string('Tel_cond');
             $table->string('Véhicule');
             $table->string('Immatriculation');
             $table->string('Départ');
             $table->string('Rétour');
               $table->timestamps();
-
-
-              $table->foreign('mission_id')->references('id')->on('missions');
-            $table->foreign('directeur_id')->references('id')->on('directeurs');
-
-            // Index
-            $table->index(['mission_id', 'directeur_id']);
-
         });
     }
 

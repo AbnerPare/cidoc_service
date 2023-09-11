@@ -15,13 +15,31 @@ class MissionController extends Controller {
 
     public function mission() {
         $user = Mission::all();
-        // $users = Mission::where( 'etat', 'en attente' )->get();
+        // $usersEnCours = Mission::where( 'etat', 'en attente' )->get();
         return view( 'missions.mission', [ 'users' => $user ] );
+        // return view( 'missions.mission', [ 'usersEnCours' => $usersEnCours ] );
+
     }
 
     public function ordre() {
         $users = Mission::all();
         return view( 'missions.ordre', compact( 'users', ) );
+    }
+
+    public function validation() {
+        $users = Mission::all();
+        return view( 'missions.validation', compact( 'users', ) );
+    }
+
+    public function valider( $id ) {
+        Mission::where( 'id', $id )->update( [ 'etat'=>true ] );
+        return redirect()->route( 'missions.validation' )->with( 'messages', 'valider avec succes' );
+        //return view( 'missions.mission', compact( 'users', ) );
+    }
+
+    public function regeter( $id ) {
+        $users = Mission::where( $id );
+        return view( 'missions.mission', compact( 'users', ) );
     }
 
     public function store1( Request $request ) {
@@ -44,10 +62,7 @@ class MissionController extends Controller {
             'Immatriculation' => 'required',
             'Départ' => 'required',
             'Rétour' => 'required',
-            'mission_id' => 'required',
-            'etat' => 'required',
-            'directeur_id' => 'required',
-            'Commentaire' => 'required',
+
         ] );
 
         Mission::create( [
@@ -64,18 +79,15 @@ class MissionController extends Controller {
             'Deuxième' =>  $validatedData[ 'Deuxième' ] ,
             'Troisième' => $validatedData[ 'Troisième' ],
             'Conducteur' => $validatedData[ 'Conducteur' ],
-            'Tel-cond' => $validatedData[ 'Tel_cond' ],
+            'Tel_cond' => $validatedData[ 'Tel_cond' ],
             'Véhicule' => $validatedData[ 'Véhicule' ],
             'Immatriculation' => $validatedData[ 'Immatriculation' ] ,
             'Départ' => $validatedData[ 'Départ' ],
             'Rétour' => $validatedData[ 'Rétour' ],
-            'mission_id' => $validatedData[ 'mission_id' ],
-            'etat' => $validatedData[ 'etat' ],
-            'directeur_id' => $validatedData[ 'directeur_id' ] ,
-            'Commentaire' => $validatedData[ 'Commentaire' ],
         ] );
 
         return redirect()->route( 'missions.mission' )->with( 'success', 'La demande de mission a été soumise avec succès.' );
 
     }
+
 }

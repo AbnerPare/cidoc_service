@@ -2,11 +2,15 @@
 
 {{-- titre --}}
 @section('titre')
-    Mission
+    Validation
 @endsection
 
 {{-- début contenu --}}
 @section('contenu')
+@if (session("message"))
+ <div class="alert-success">{{$messages}}</div>
+    
+@endif
     <br>
     @foreach ($users as $user)
         <div class="container" style="width: 800px; background-color: rgb(206, 206, 195)"><br>
@@ -75,13 +79,11 @@
             </p>
             <p style="text-align: center">Récépissé N°00000527501 du 26 Mars 2019 - IFU N° 00073032Y</p>
             <p style="text-align: center">Site Web : <a href="www.centrecitoyen.org">www.centrecitoyen.org</a> </p>
-            <button disabled="desabled" class="btn btn-info">
-                {{ $user->etat }}
-            </button>
-            <h4 style="text-align: right" class="mr-5">Le coordonnateur</h4>
-            <h4 style="text-align: right">Kounkinè Augustin SOME</h4><br>
-
-
+        <h4 style="text-align: right" class="mr-5">Le coordonnateur</h4><br>
+        <h4 style="text-align: right">Kounkinè Augustin SOME</h4><br>
+        <a href="" class="btn btn-success">Valider</a>
+        <a href="" class="btn btn-danger">Regeter</a>
+        
         </div><br>
     @endforeach
     {{-- fin contenu --}}

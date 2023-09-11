@@ -7,6 +7,15 @@ use App\Http\Controllers\PersonnelController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\MissionController;
 use App\Http\Controllers\CidocController;
+use App\Http\Controllers\DirecteurController;
+use App\Http\Controllers\PDFController;
+use App\Http\Controllers\ContratController;
+use App\Http\Controllers\OmissionController;
+use App\Http\Controllers\OcongeController;
+use App\Http\Controllers\NewsletterController;
+
+use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,24 +39,28 @@ use Illuminate\Support\Facades\Route;
  Route::get('/ajouter', [ResumeController::class, 'ajouter'])->name('resumes.ajouter');      
  Route::post('/', [ResumeController::class, 'store'])->name('resumes.store');      
 
-
-//  Route::get('/', [AjoutController::class, 'index'])->name('resumes.index');      
-//  Route::get('/ajout', [AjoutController::class, 'ajout'])->name('resumes.ajout');      
-//  Route::post('/', [AjoutController::class, 'stor'])->name('resumes.stor');      
-
-
-
 Route::get('/rapport', [RapportController::class, 'rapport'])->name('rapports.rapport');      
 Route::get('/ajout', [RapportController::class, 'ajout'])->name('rapports.ajout'); 
 Route::post('/rapport', [RapportController::class, 'stor'])->name('rapports.stor');      
 
+Route::get('/contrat', [ContratController::class, 'contrat'])->name('contrats.contrat');      
+Route::get('/crate', [ContratController::class, 'crate'])->name('contrats.crate'); 
+Route::post('/contrat', [ContratController::class, 'store'])->name('contrats.store');
+
+Route::get('/omission', [OmissionController::class, 'omission'])->name('omissions.omission');      
+Route::get('/create', [OmissionController::class, 'create'])->name('omissions.create'); 
+Route::post('/omission', [OmissionController::class, 'store'])->name('omissions.store');
+
+Route::get('/oconge', [OcongeController::class, 'oconge'])->name('oconges.oconge');      
+Route::get('/creat', [OcongeController::class, 'creat'])->name('oconges.creat'); 
+Route::post('/oconge', [OcongeController::class, 'store'])->name('oconges.store');
 
 Route::get('/mission', [MissionController::class, 'mission'])->name('missions.mission');      
 Route::get('/ordre', [MissionController::class, 'ordre'])->name('missions.ordre');      
 Route::post('/mission', [MissionController::class, 'store1'])->name('missions.store1');      
-
-
-
+Route::get('/validation', [MissionController::class, 'validation'])->name('missions.validation');      
+Route::get('/valider/{id}', [MissionController::class, 'valider'])->name('missions.valider');      
+Route::get('/regeter/{id}', [MissionController::class, 'regeter'])->name('missions.regeter');      
 
 
 Route::get('/perso', [PersonnelController::class, 'perso'])->name('personnels.perso');
@@ -56,35 +69,10 @@ Route::post('/perso', [PersonnelController::class, 'tore'])->name('personnels.to
 Route::get('/{personnel}', [PersonnelController::class, 'edit'])->name('personnels.edit');
 Route::put('/{id}', [PersonnelController::class, 'update'])->name('personnels.update');
 
-
-
-
-
-
-
 Route::get('/forum', [CidocController::class, 'forum']);
-
 Route::get('/conge', [CidocController::class, 'conge']);
-
 Route::get('/attestation', [CidocController::class, 'attestation']);
-
 Route::get('/admin', [CidocController::class, 'admin']);
 
 
 
-
-
-// routes/web.php
-
-// Création de demande
-
-
-Route::get('/soumissions/create', [SoumissionController::class, 'create'])->name('soumissions.create');
-Route::post('/soumissions', [SoumissionController::class, 'store'])->name('soumissions.store');;
-
-// Affichage des demandes soumises
-Route::get('/soumissions/show', [SoumissionController::class, 'index'])->name('soumissions.index');;
-
-// Validation des demandes par le directeur
-Route::get('/soumissions/valider/{soumission}', [SoumissionController::class, 'valider'])->name('soumissions.valider');;
-Route::put('/soumissions/{soumission}/valider', [SoumissionController::class, 'Soumission'])->name('soumissions.validerSoumission');;

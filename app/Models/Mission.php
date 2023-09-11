@@ -22,23 +22,20 @@ class Mission extends Model {
         'Deuxième',
         'Troisième',
         'Conducteur',
-        'Tel-cond',
+        'Tel_cond',
         'Véhicule',
         'Immatriculation',
         'Départ',
         'Rétour',
-        'mission_id',
-        'etat',
-        'directeur_id',
-        'Commentaire',
+        'Etat'
     ];
 
-    public function demande() {
-        return $this->belongsTo( Mission::class, 'mission_id' );
-    }
+    // public function demande() {
+    //     return $this->belongsTo( Mission::class, 'mission_id' );
+    // }
 
-    public function directeur() {
-        return $this->belongsTo( Directeur::class, 'directeur_id' );
-    }
+    // public function directeur() {
+    //     return $this->belongsTo( Directeur::class, 'directeur_id' );
+    // }
 
 }

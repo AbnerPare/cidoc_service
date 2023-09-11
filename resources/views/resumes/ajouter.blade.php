@@ -8,7 +8,7 @@
 <div class="container "><br>
     <div class="row justify-content-center ">
         <div class="col-md-7 bg-success" style="border-radius: 20px ; border:solid 10px rgb(64, 170, 64)">
-            <div class="card" style="border-radius: 20px ">
+            <div class="card" style="border-radius: 20px ; border: none ">
                 <div class="card-header bg-success text-center" style="color:#f1f7fa; font-weight:bold">
                     <h4> Ajouter le résumé d'une action en cours</h4>
                 </div>

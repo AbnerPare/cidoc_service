@@ -72,7 +72,7 @@
                
 
                 @foreach ($users as $user)
-                    <div class="col-md-2 mt-3 span-thematique"
+                    <div class="col-md-2 col-6 mt-3 span-thematique"
                         data-thematique="{{ $user['Thématique'] }}"
                         style="border-bottom-right-radius: 20px; border-top-right-radius: 50px; border:solid 10px white; background-color:#c09854">
                         <div style="border-top-right-radius: 50px">

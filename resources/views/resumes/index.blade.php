@@ -58,13 +58,13 @@
     <a href="{{ route('resumes.ajouter') }}" class="btn btn-info btn-xs py-0 float-end">Ajouter un nouveau document</a>
 
 
-    <div class="bg-success  text-white">
+    <div class="bg-success  text-white col-12">
 
         <h2 id="Projects" style="font-size:40px; text-align:center">Projects</h2>
 
-        <div class="container" style="width: 800px">
+        <div class="container" style="width:80%">
             <div class="row bg-success">
-                <div class="col-sm-6">
+                <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <label for="filter" class="text-white">
                             <h5> Filtrer par Thématique :</h5>
@@ -79,7 +79,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <label for="filt" class="text-white">
                             <h5>Filtrer par Etat :</h5>
@@ -99,7 +99,7 @@
         <div class="container-fluid">
             <div class="row" id="user-list">
                 @foreach ($users as $user)
-                    <div class="col-sm-2 mt-3 bg-success"
+                    <div class="col-6 col-sm-2 mt-3 bg-success"
                         style="border-bottom-right-radius: 20px; border-top-right-radius: 50px; border:solid 10px white; position: relative;">
                         <div style="border-top-right-radius: 50px">
                             <div class="card-body">
@@ -111,7 +111,7 @@
                                     style="background: rgb(106, 4, 4); padding: 2px; border-radius: 20px; text-align: center; color: white">
                                     {{ $user['Etat'] }}
                                 </p>
-                                <img src="img/logo.png" alt="..." width="100">
+                                <img src="img/logo.png" alt="..." width="100" class="d-none d-sm-block">
                                 <p style="color: white">
                                     {{ $user['Description'] }}
                                 </p>

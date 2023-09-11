@@ -2,11 +2,15 @@
 /********* General CSS *********/
 /*******************************/
 body {
+    display: flex;
+    flex-direction: column;
     color:black;
     text-align: justify;
     /* font-family: 'Roboto', sans-serif; */
 }
-
+.tout{
+    flex-grow: 1;
+}
 
 /* body {
     background-image: url("img/1.jpg");
@@ -34,6 +38,12 @@ h6 {
 
 .btn-outline-success{border: solid green 1px;
 border-radius: 5px;}
+
+
+html,body{
+    height: 100%;
+}
+
 
 
 a {
@@ -144,11 +154,11 @@ a:focus {
 
 @media (min-width:1010px) {
     .nav-bar {
-        padding: 20px 60px;
+        padding: 18px 50px;
     }
     
     .nav-bar.nav-sticky {
-        padding: 10px 60px;
+        padding: 8px 50px;
     }
     
     .nav-bar,
@@ -161,8 +171,8 @@ a:focus {
     }
     
     .nav-bar a.nav-link {
-        padding: 8px 15px;
-        font-size: 15px;
+        padding: 6px 12px;
+        font-size: 12px;
         text-transform: uppercase;
     }
 }
@@ -328,7 +338,6 @@ a:focus {
 /*******************************/
 .newsletter {
     position: relative;
-    max-width: 900px;
     margin: 45px auto -140px auto;
     padding: 20px 10px;
     background: black;

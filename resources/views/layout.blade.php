@@ -29,7 +29,7 @@
 </head>
 
 <body style="color: black">
-
+<div class="tout">
 
     <div class="wrapper">
         <!-- Nav Bar Start -->
@@ -77,9 +77,9 @@
                                 <a href="#" class="nav-link dropdown-toggle"
                                     data-toggle="dropdown">Documentation</a>
                                 <div class="dropdown-menu">
-                                    <a href="{{ URL::to('/soumissions/create') }}" class="dropdown-item"> Fiche de congé *create</a>
-                                    <a href="{{ URL::to('/soumissions/show') }}" class="dropdown-item">Ordre de mission *index</a>
-                                    <a href="{{ URL::to('/soumissions/valider/{soumission}') }}" class="dropdown-item">Contrats *valider</a>
+                                    <a href="{{ URL::to('/oconge') }}" class="dropdown-item"> Fiche de congé </a>
+                                    <a href="{{ URL::to('/omission') }}" class="dropdown-item">Ordre de mission </a>
+                                    <a href="{{ URL::to('/contrat') }}" class="dropdown-item">Contrats </a>
                                     <a href="{{ URL::to('/rapport') }}" class="dropdown-item">Rapports de projets</a>
                                 </div>
                             </div>
@@ -94,7 +94,8 @@
                                 </div>
                             </div>
                             <a href="{{ URL::to('/forum') }}" class="nav-item nav-link">Forum</a>
-                            <a href="{{ URL::to('/mission') }}" class="nav-item nav-link">admin</a>
+                            <a href="{{ URL::to('/mission') }}" class="nav-item nav-link">Demandes</a>
+                            <a href="{{ URL::to('/validation') }}" class="nav-item nav-link">Admin</a>
                             {{-- bouton de recherche --}}
                             <form class="d-flex justify-content-end" role="search">
                                 <input class="form-control me-3" type="search" placeholder="Rechercher ici" required>
@@ -122,10 +123,10 @@
 
 
 
-
+</div>
     {{-- fin du contenu            --}}
     <!-- Newsletter Start -->
-    <div class="newsletter">
+    <div class="newsletter" style="width: 60%">
         <div class="container">
             <div class="section" style="text-align: center">
                 <h1>Bulletin</h1>

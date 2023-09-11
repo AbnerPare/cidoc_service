@@ -15,7 +15,7 @@
     <div class="container "><br>
         <div class="row justify-content-center ">
             <div class="col-md-10 bg-success" style="border-radius: 20px ; border:solid 10px rgb(64, 170, 64)">
-                <div class="card" style="border-radius: 20px ">
+                <div class="card" style="border-radius: 20px ; border: none">
                     <div class="card-header bg-success text-center" style="color:#f1f7fa; font-weight:bold">
                        <h4> Formulaire d'ordre de mission</h4>
                     </div>
@@ -219,8 +219,7 @@
                                     @enderror
                                 </div>
                             </div>
-
-                            <div class="row mb-3">
+                            {{-- <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label">mission_id</label>
                                 <div class="col-sm-9">
                                     <input type="tel" class="form-control" name="mission_id" placeholder="mission_id"
@@ -231,47 +230,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label class="col-sm-3 col-form-label">etat</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="etat" placeholder="etat"
-                                        @error('etat') is-invalid @enderror>
-                                    @error('etat')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label class="col-sm-3 col-form-label">Commentaire</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="Commentaire" placeholder="Commentaire"
-                                        @error('Commentaire') is-invalid @enderror>
-                                    @error('Commentaire')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label class="col-sm-3 col-form-label">directeur_id</label>
-                                <div class="col-sm-9">
-                                    <input type="tel" class="form-control" name="directeur_id" placeholder="directeur_id"
-                                        @error('directeur_id') is-invalid @enderror>
-                                    @error('directeur_id')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
+                            </div> --}}
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label">Date de départ</label>
                                 <div class="col-sm-9">
@@ -296,13 +255,10 @@
                                     @enderror
                                 </div>
                             </div>
-
-
-
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label"></label>
                                 <div class="col-sm-9">
-                                    <button type="submit" class="btn btn-success text-white">Envoyer</button>
+                                    <button type="submit" class="btn btn-success text-white">Soumettre</button>
                                     <a href="{{ route('missions.mission') }}" class="btn btn-danger  float-end">Annuler</a>
                                 </div>
                             </div>
