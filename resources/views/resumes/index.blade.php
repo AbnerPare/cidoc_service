@@ -14,11 +14,6 @@
     <!-- Carousel Start -->
 
     <div id="carousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel" data-slide-to="1"></li>
-            <li data-target="#carousel" data-slide-to="2"></li>
-        </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="img/carousel-2.jpg" alt="Carousel Image">
@@ -52,47 +47,69 @@
 
 
     <!-- Carousel Start -->
+    <div class="gradient-background  text-white col-12">
 
-
-    <h1 id="Projects" class="text-white">.<br><br></h1>
-    <a href="{{ route('resumes.ajouter') }}" class="btn btn-info btn-xs py-0 float-end">Ajouter un nouveau document</a>
-
-
-    <div class="bg-success  text-white col-12">
-
-        <h2 id="Projects" style="font-size:40px; text-align:center">Projects</h2>
-
-        <div class="container" style="width:80%">
-            <div class="row bg-success">
-                <div class="col-sm-12 col-md-6">
-                    <div class="form-group">
-                        <label for="filter" class="text-white">
-                            <h5> Filtrer par Thématique :</h5>
-                        </label>
-                        <select class="form-control" id="filter">
-                            <option value="all">Toutes les thématiques</option>
-                            <option value="Actions DED">Actions DED</option>
-                            <option value="Actions DHC">Actions DHC</option>
-                            <option value="Action Protection">Action Protection</option>
-                            <option value="Actions administrative">Actions administrative</option>
-                            <option value="Actions logistique">Actions logistique</option>
-                        </select>
+        <div class="text-center">
+            <h1 class="text-white">A la une</h1>
+        </div>
+        <div id="carousel" class="carousel slide mb-4" data-ride="carousel" style="width: 60%">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/u1.jpeg" alt="Carousel Image">
+                    <div class="carousel-caption d-flex justify-content-end align-items-end">
+                        <p class="bg-info mb-0 animated fadeInLeft d-sm-block">Le Cidoc est présent à la rencontre mensuelle du cadre de concertation entre le Haut-Commissariat des droits de l'homme et les OSC</p>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6">
-                    <div class="form-group">
-                        <label for="filt" class="text-white">
-                            <h5>Filtrer par Etat :</h5>
-                        </label>
-                        <select class="form-control" id="filt">
-                            <option value="all">Tous les Etats</option>
-                            <option value="En cours">En cours</option>
-                            <option value="déjà exécutée">déjà exécutée</option>
-                        </select>
+        
+                <div class="carousel-item">
+                    <img src="img/u2.jpeg" alt="Carousel Image">
+                    <div class="carousel-caption d-flex justify-content-end align-items-end">
+                        <p class="bg-info mb-0 animated fadeInLeft d-sm-block">La mission de l'équipe de Fada a pris fin aujourd'hui. L'hélico va bientôt décoller pour Ouaga. A bientôt</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/u3.jpeg" alt="Carousel Image">
+                    <div class="carousel-caption d-flex justify-content-end align-items-end">
+                        <p class="bg-info mb-0 animated fadeInLeft d-sm-block">Hello Chers Collègues. Recevez notre bonsoir depuis le bureau Cidoc de Dori.</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    {{-- 
+
+    <div class="container" style="width:80%">
+        <div class="row bg-success">
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                    <label for="filter" class="text-white">
+                        <h5> Filtrer par Thématique :</h5>
+                    </label>
+                    <select class="form-control" id="filter">
+                        <option value="all">Toutes les thématiques</option>
+                        <option value="Actions DED">Actions DED</option>
+                        <option value="Actions DHC">Actions DHC</option>
+                        <option value="Action Protection">Action Protection</option>
+                        <option value="Actions administrative">Actions administrative</option>
+                        <option value="Actions logistique">Actions logistique</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                    <label for="filt" class="text-white">
+                        <h5>Filtrer par Etat :</h5>
+                    </label>
+                    <select class="form-control" id="filt">
+                        <option value="all">Tous les Etats</option>
+                        <option value="En cours">En cours</option>
+                        <option value="déjà exécutée">déjà exécutée</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 
     <div class="container-fluid" id="filteredUsers">
@@ -117,14 +134,14 @@
                                 </p>
                             </div>
                         </div>
-                        <a href="{{ asset('storage/' . $user->pdf_path) }}" target="_blank"
-                            class="btn btn-info pb-0" style="position: absolute; top: 95%; left: 50%; transform: translate(-50%, -50%);">Ouvrir</a>
+                        <a href="{{ asset('storage/' . $user->pdf_path) }}" target="_blank" class="btn btn-info pb-0"
+                            style="position: absolute; top: 95%; left: 50%; transform: translate(-50%, -50%);">Ouvrir</a>
                     </div>
                 @endforeach
             </div>
         </div>
     </div>
-    
+ --}}
 
     {{-- fin contenu --}}
 @endsection

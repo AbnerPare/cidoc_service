@@ -27,11 +27,6 @@
 
 @section('contenu')
     <br>
-
-
-
-
-    <a href="{{ route('oconges.creat') }}" class="btn btn-success btn-xs py-0 float-end">Ajouter</a>
     <div class="action">
         <h2 class="text-center text-white">Les fiches de congés</h2>
     </div>

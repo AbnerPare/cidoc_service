@@ -39,9 +39,6 @@
             <label class="form-check-label" for="non-disponible">Non disponible</label>
         </div>
 
-
-
-        <a href="{{ route('personnels.creer') }}" class="btn btn-success btn-xs py-0 float-end">Ajouter</a>
         <div class="row">
             <div class="col-sm-12">
                 <div class="table-responsive">

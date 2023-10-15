@@ -29,9 +29,6 @@ Contrats
     <br>
 
 
-
-
-    <a href="{{ route('contrats.crate') }}" class="btn btn-success btn-xs py-0 float-end">Ajouter</a>
 <div class="action">
     <h2 class="text-center text-white">Les Contrats</h2>    
 </div>

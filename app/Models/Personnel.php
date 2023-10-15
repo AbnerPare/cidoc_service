@@ -16,7 +16,7 @@ class Personnel extends Model {
         'Département',
         'Statut_de_présence',
         'Precision',
-        'image' // Utilisez le même nom de champ que dans le contrôleur
+        'image'
     ];
 }
 ;

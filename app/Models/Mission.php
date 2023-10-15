@@ -27,15 +27,8 @@ class Mission extends Model {
         'Immatriculation',
         'Départ',
         'Rétour',
-        'Etat'
+        'etat', // Remarquez la correction du nom de la colonne 'etat'
+        'directeur_id' // Nouvelle colonne 'directeur_id'
     ];
-
-    // public function demande() {
-    //     return $this->belongsTo( Mission::class, 'mission_id' );
-    // }
-
-    // public function directeur() {
-    //     return $this->belongsTo( Directeur::class, 'directeur_id' );
-    // }
-
 }
+

@@ -7,13 +7,12 @@
 
 {{-- début contenu --}}
 @section('contenu')
-@if (session("message"))
- <div class="alert-success">{{$messages}}</div>
-    
-@endif
+    @if (session('message'))
+        <div class="alert-success">{{ $message }}</div>
+    @endif
     <br>
     @foreach ($users as $user)
-        <div class="container" style="width: 800px; background-color: rgb(206, 206, 195)"><br>
+        <div class="container" style="width: 60%; background-color: rgb(206, 206, 195)"><br>
             <div class="row">
                 <div class="col-md-5 text-right">
                     <p class="text-right">Centre d’information et de documentation citoyennes</p>
@@ -69,7 +68,7 @@
 
             <div class="d-flex">
                 <h6>RETOUR : </h6>
-                <p class="ml-4">{{ $user->Départ }}</p>
+                <p class="ml-4">{{ $user->Rétour }}</p>
             </div>
 
             <p style="text-align: center">09 BP 753 Ouagadougou 09, Burkina faso.</p>
@@ -79,11 +78,17 @@
             </p>
             <p style="text-align: center">Récépissé N°00000527501 du 26 Mars 2019 - IFU N° 00073032Y</p>
             <p style="text-align: center">Site Web : <a href="www.centrecitoyen.org">www.centrecitoyen.org</a> </p>
-        <h4 style="text-align: right" class="mr-5">Le coordonnateur</h4><br>
-        <h4 style="text-align: right">Kounkinè Augustin SOME</h4><br>
-        <a href="" class="btn btn-success">Valider</a>
-        <a href="" class="btn btn-danger">Regeter</a>
-        
+            <h5 style="text-align: right" class="mr-5">Le coordonnateur</h5><br>
+            <h5 style="text-align: right">Kounkinè Augustin SOME</h5><br>
+            <form action="{{ route('missions.valider', ['id' => $user->id]) }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-success">Valider</button>
+            </form>
+
+            <form action="{{ route('missions.rejeter', ['id' => $user->id]) }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-danger">Rejeter</button>
+            </form>
         </div><br>
     @endforeach
     {{-- fin contenu --}}

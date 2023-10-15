@@ -2,31 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Resume;
+use App\Models\Resumé_ded;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class ResumeController extends Controller {
+class Resumé_dedController extends Controller {
 
-    public function index() {
-        $users = Resume::query()->latest()->paginate( 10 );
-
-        return view( 'resumes.index', compact( 'users' ) );
+    public function project() {
+        return view( 'resumes.project' );
     }
 
-    public function ajouter() {
-        return view( 'resumes.ajouter' );
+    public function ded() {
+        $users = Resumé_ded::query()->latest()->paginate( 10 );
+        return view( 'resumes.ded', compact( 'users' ) );
     }
 
-    public function gestion() {
-        return view( 'resumes.gestion' );
+    public function dedcreate() {
+        return view( 'resumes.dedcreate' );
     }
 
-    public function store( Request $request ) {
+    public function storeded( Request $request ) {
 
         $request->validate( [
             'Description' => 'required',
-            'Thématique' => 'required',
             'Etat' => 'required',
             'pdf_file' => 'required|mimes:pdf,odt,txt,docx,ppt,pptx,doc|max:10240',
         ] );
@@ -40,16 +38,15 @@ class ResumeController extends Controller {
             // Stockage du fichier PDF
         }
 
-        $user = new Resume;
+        $user = new Resumé_ded;
         $user->Description = $request->input( 'Description' );
-        $user->Thématique = $request->input( 'Thématique' );
         $user->Etat = $request->input( 'Etat' );
         $user->pdf_path = $pdfPath;
         // Utilisez la variable $pdfPath générée précédemment
         $user->save();
 
-        return redirect()->route( 'resumes.index' )->with( [
-            'message' => 'Resume added successfully!',
+        return redirect()->route( 'resumes.ded' )->with( [
+            'message' => 'Resumé_ded added successfully!',
             'status' => 'success'
         ] );
     }

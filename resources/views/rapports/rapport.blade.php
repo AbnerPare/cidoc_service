@@ -27,11 +27,6 @@
 
 @section('contenu')
     <br>
-
-
-
-
-    <a href="{{ route('rapports.ajout') }}" class="btn btn-success btn-xs py-0 float-end">Ajouter</a>
 <div class="action">
     <h2 class="text-center text-white">Les Rapports de project</h2>
     <div class="row mb-3">

@@ -23,7 +23,7 @@
                         {!! implode('', $errors->all('<div>:message</div>')) !!}
                     @endif
                     <div class="card-body" style="background-color: rgb(206, 206, 195)">
-                        <form class="w-px-500 p-3 p-md-3" action="{{ route('omissions.store') }}" method="post"
+                        <form class="w-px-500 p-3 p-md-3 dark-text" action="{{ route('omissions.store') }}" method="post"
                             enctype="multipart/form-data" >
                             @csrf
                             <div class="row mb-3">

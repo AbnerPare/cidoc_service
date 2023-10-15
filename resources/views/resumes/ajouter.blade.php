@@ -16,7 +16,7 @@
                     {!! implode('', $errors->all('<div>:message</div>')) !!}
                 @endif
                 <div class="card-body"style="background-color: rgb(206, 206, 195)">
-                    <form class="w-px-500 p-3 p-md-3" action="{{ route('resumes.store') }}" method="post" enctype="multipart/form-data">
+                    <form class="w-px-500 p-3 p-md-3 dark-text" action="{{ route('resumes.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label">Description</label>

@@ -9,12 +9,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('missions', function (Blueprint $table) {
             $table->id();
-            $table->string('Etat')->default(false); // État de la demande (en attente, validée, rejetée, etc.)
-           $table->string('Date_du_remplissage');
+            $table->string('etat')->default(0);
+            $table->unsignedBigInteger('directeur_id')->nullable();
+            $table->string('Date_du_remplissage');
             $table->string('N°1');
             $table->string('N°2');
             $table->string('N°3');
@@ -32,9 +33,10 @@ return new class extends Migration
             $table->string('Immatriculation');
             $table->string('Départ');
             $table->string('Rétour');
-              $table->timestamps();
+            $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

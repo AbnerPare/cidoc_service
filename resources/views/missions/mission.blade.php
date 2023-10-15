@@ -9,7 +9,7 @@
 @section('contenu')
     <br>
     @foreach ($users as $user)
-        <div class="container" style="width: 800px; background-color: rgb(206, 206, 195)"><br>
+        <div class="container" style="width: 60%; background-color: rgb(206, 206, 195)"><br>
             <div class="row">
                 <div class="col-md-5 text-right">
                     <p class="text-right">Centre d’information et de documentation citoyennes</p>
@@ -65,7 +65,7 @@
 
             <div class="d-flex">
                 <h6>RETOUR : </h6>
-                <p class="ml-4">{{ $user->Départ }}</p>
+                <p class="ml-4">{{ $user->Rétour }}</p>
             </div>
 
             <p style="text-align: center">09 BP 753 Ouagadougou 09, Burkina faso.</p>
@@ -75,12 +75,19 @@
             </p>
             <p style="text-align: center">Récépissé N°00000527501 du 26 Mars 2019 - IFU N° 00073032Y</p>
             <p style="text-align: center">Site Web : <a href="www.centrecitoyen.org">www.centrecitoyen.org</a> </p>
-            <button disabled="desabled" class="btn btn-info">
-                {{ $user->etat }}
-            </button>
-            <h4 style="text-align: right" class="mr-5">Le coordonnateur</h4>
-            <h4 style="text-align: right">Kounkinè Augustin SOME</h4><br>
+            <h5 style="text-align: right" class="mr-5">Le coordonnateur</h5><br>
+            <h5 style="text-align: right">Kounkinè Augustin SOME</h5>
 
+            <button disabled="disabled" class="btn btn-success">
+                {{ $user->etat }}
+                @if ($user->etat == 'Avis favorable')
+                    <form method="get" action="{{ route('missions.download', ['id' => $user->id]) }}">
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fa fa-download"></i>
+                        </button>
+                    </form>
+                @endif
+            </button>
 
         </div><br>
     @endforeach

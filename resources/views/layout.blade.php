@@ -8,7 +8,16 @@
     <meta content="Law Firm Website Template" name="keywords">
     <meta content="Law Firm Website Template" name="description">
     <style>
+        .gradient1-background {
+            background: linear-gradient(to bottom, rgba(113, 173, 237, 0.5), rgba(255, 255, 255, 0.5));
 
+        }
+        .gradient-background {
+            padding: 20px;
+            background: linear-gradient(to bottom, #0556ac, #ffffff);
+            /* Autres propriétés CSS au besoin */
+            /* Couleur du texte pour une meilleure lisibilité */
+        }
     </style>
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -29,116 +38,111 @@
 </head>
 
 <body style="color: black">
-<div class="tout">
+    <div class="tout">
 
-    <div class="wrapper">
-        <!-- Nav Bar Start -->
-        <div class="nav-bar ">
-            <div class="container-fluid ">
-                <nav class="navbar navbar-expand-lg  navbar-dark ">
+        <div class="wrapper">
+            <!-- Nav Bar Start -->
+            <div class="nav-bar shadow ">
+                <div class="container-fluid ">
+                    <nav class="navbar navbar-expand-lg  navbar-dark">
 
-                    <a href="{{ URL::to('/') }}" class="mr-5">
-                        <img src="img/logo.png" alt="Logo" width="80px" height="auto">
-                    </a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                        <a href="{{ URL::to('/') }}" class="mr-5">
+                            <img src="img/logo.png" alt="Logo" width="80px" height="auto">
+                        </a>
+                        <button type="button" class="navbar-toggler" data-toggle="collapse"
+                            data-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
 
-                    <div class="collapse navbar-collapse justify-content-between " id="navbarCollapse">
-                        <div class="navbar-nav mr-auto">
-                            <a href="{{ URL::to('/') }}" class="nav-item nav-link active">Accueil</a>
-                            <a href="#Projects" class="nav-item nav-link ">Projects</a>
+                        <div class="collapse navbar-collapse justify-content-between  " id="navbarCollapse">
+                            <div class="navbar-nav mr-auto">
+                                <a href="{{ URL::to('/') }}" class="nav-item nav-link active">Accueil</a>
+                                <a href="{{ URL::to('/project') }}" class="nav-item nav-link ">Projects</a>
 
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Le
-                                    personnel</a>
-                                <div class="dropdown-menu">
-                                    <a href="{{ URL::to('/ordre') }}" class="dropdown-item"> Ordres de missions</a>
-                                    <a href="{{ URL::to('/conge') }}" class="dropdown-item"> Demandes de congés</a>
-                                    <a href="{{ URL::to('/attestation') }}" class="dropdown-item">Les attestations</a>
-                                    <a href="#" class="dropdown-item">Demande de fonds</a>
-                                    <a href="#" class="dropdown-item">autorisation d'absence</a>
-                                    <a href="{{ URL::to('/perso') }}" class="dropdown-item">Personnel disponible</a>
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Le
+                                        personnel</a>
+                                    <div class="dropdown-menu">
+                                        <a href="{{ URL::to('/ordre') }}" class="dropdown-item"> Ordres de missions</a>
+                                        <a href="{{ URL::to('/conge') }}" class="dropdown-item"> Demandes de congés</a>
+                                        <a href="{{ URL::to('/attestation') }}" class="dropdown-item">Les
+                                            attestations</a>
+                                        <a href="#" class="dropdown-item">Demande de fonds</a>
+                                        <a href="{{ URL::to('/cre_ab') }}" class="dropdown-item">autorisation
+                                            d'absence</a>
+                                        <a href="{{ URL::to('/perso') }}" class="dropdown-item">Personnel disponible</a>
+                                    </div>
                                 </div>
-                            </div>
 
 
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Finance </a>
-                                <div class="dropdown-menu">
-                                    <a href="blog.html" class="dropdown-item">Demandes de fonds</a>
-                                    <a href="single.html" class="dropdown-item">Fournisseur</a>
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Finance
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a href="blog.html" class="dropdown-item">Demandes de fonds</a>
+                                        <a href="single.html" class="dropdown-item">Fournisseur</a>
+                                    </div>
                                 </div>
-                            </div>
 
 
 
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle"
-                                    data-toggle="dropdown">Documentation</a>
-                                <div class="dropdown-menu">
-                                    <a href="{{ URL::to('/oconge') }}" class="dropdown-item"> Fiche de congé </a>
-                                    <a href="{{ URL::to('/omission') }}" class="dropdown-item">Ordre de mission </a>
-                                    <a href="{{ URL::to('/contrat') }}" class="dropdown-item">Contrats </a>
-                                    <a href="{{ URL::to('/rapport') }}" class="dropdown-item">Rapports de projets</a>
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle"
+                                        data-toggle="dropdown">Documentation</a>
+                                    <div class="dropdown-menu">
+                                        <a href="{{ URL::to('/oconge') }}" class="dropdown-item"> Fiche de congé </a>
+                                        <a href="{{ URL::to('/omission') }}" class="dropdown-item">Ordre de mission
+                                        </a>
+                                        <a href="{{ URL::to('/contrat') }}" class="dropdown-item">Contrats </a>
+                                        <a href="{{ URL::to('/rapport') }}" class="dropdown-item">Rapports de
+                                            projets</a>
+                                    </div>
                                 </div>
-                            </div>
 
 
 
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tâches </a>
-                                <div class="dropdown-menu">
-                                    <a href="blog.html" class="dropdown-item">Demander une tâche</a>
-                                    <a href="single.html" class="dropdown-item">Attribuer une tâche</a>
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tâches
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a href="blog.html" class="dropdown-item">Demander une tâche</a>
+                                        <a href="single.html" class="dropdown-item">Attribuer une tâche</a>
+                                    </div>
                                 </div>
+                                <a href="{{ URL::to('/forum') }}" class="nav-item nav-link">Forum</a>
+                                <a href="{{ URL::to('/mission') }}" class="nav-item nav-link">Demandes</a>
+                                <a href="{{ URL::to('/validation') }}" class="nav-item nav-link">Admin</a>
+                                <a href="{{ URL::to('/gestion') }}" class="nav-item nav-link">Gestion</a>
+                                {{-- bouton de recherche --}}
+                                <form class="d-flex justify-content-end" role="search">
+                                    <input class="form-control me-3" type="search" placeholder="Rechercher ici"
+                                        required>
+                                    <button class="me-2  btn-outline-success" type="submit">Rechercher</button>
+                                </form>
                             </div>
-                            <a href="{{ URL::to('/forum') }}" class="nav-item nav-link">Forum</a>
-                            <a href="{{ URL::to('/mission') }}" class="nav-item nav-link">Demandes</a>
-                            <a href="{{ URL::to('/validation') }}" class="nav-item nav-link">Admin</a>
-                            {{-- bouton de recherche --}}
-                            <form class="d-flex justify-content-end" role="search">
-                                <input class="form-control me-3" type="search" placeholder="Rechercher ici" required>
-                                <button class="me-2  btn-outline-success" type="submit">Rechercher</button>
-                            </form>
                         </div>
-                    </div>
-                </nav>
+                    </nav>
+                </div>
             </div>
         </div>
+
+        <!-- Nav Bar End -->
+
+
+
+        {{-- debut du contenu   --}}
+
+
+
+
+
+        @yield('contenu')
+
+
+
+
     </div>
-
-    <!-- Nav Bar End -->
-
-
-
-    {{-- debut du contenu   --}}
-
-
-
-
-
-    @yield('contenu')
-
-
-
-
-</div>
     {{-- fin du contenu            --}}
-    <!-- Newsletter Start -->
-    <div class="newsletter" style="width: 60%">
-        <div class="container">
-            <div class="section" style="text-align: center">
-                <h1>Bulletin</h1>
-            </div>
-            <div class="form">
-                <input class="form-control" placeholder="Envoyez un courriel ici">
-                <button class="btn">Envoyer</button>
-            </div>
-        </div>
-    </div>
-    <!-- Newsletter End -->
-
 
     <!-- Footer Start -->
     <div class="footer text-white">
@@ -179,8 +183,10 @@
                                 <p><i class="fa fa-map-marker-alt"></i>Cité SOCOGIB Ouaga 2000, Villa N°157
 
                                     09 BP 753 Ouagadougou 09 Burkina Faso</p>
-                                <p><i class="fa fa-phone-alt"></i>+226 25 50 54 43</p>
-                                <p><i class="fa fa-envelope"></i>contact@centrecitoyen.org</p>
+                                <p>
+                                    <a class="fa fa-phone-alt text-white" href="tel:+22625505443" target="_blank">+226 25 50 54 43</a>
+                                <p><a class="fa fa-envelope text-white" href="mailto:contact@centrecitoyen.org"
+                                    target="_blank">contact@centrecitoyen.org</a></p>
                                 <div class="footer-social">
                                     <a href=""><i class="fab fa-twitter"></i></a>
                                     <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -196,7 +202,7 @@
         </div>
         <div class="container footer-menu">
             <div class="f-menu">
-                <p> <a href=""> &copy; Copyright 2023 Cidoc | par </a><a href="#">Lawadoen</a> </p>
+                <a href=""> &copy; Copyright 2023 Cidoc </a>
             </div>
         </div>
 
@@ -207,28 +213,28 @@
     </div>
 
     {{-- script du filtre des thématiques --}}
-    <script>
+    {{-- <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Sélectionnez les éléments de filtre
             var filterThematique = document.getElementById("filter");
             var filterEtat = document.getElementById("filt");
-    
+
             // Sélectionnez la liste d'utilisateurs
             var userList = document.getElementById("user-list");
-    
+
             // Écoutez les changements dans les filtres
             filterThematique.addEventListener("change", function() {
                 var selectedThematique = filterThematique.value;
                 var selectedEtat = filterEtat.value;
-    
+
                 // Parcourez les éléments de la liste d'utilisateurs
                 var users = userList.getElementsByClassName("col-sm-2");
-    
+
                 for (var i = 0; i < users.length; i++) {
                     var user = users[i];
                     var thematique = user.querySelector(".span-thematique").textContent.trim();
                     var etat = user.querySelector(".span-etat").textContent.trim();
-    
+
                     // Affichez ou masquez l'utilisateur en fonction des filtres sélectionnés
                     if ((selectedThematique === "all" || thematique === selectedThematique) &&
                         (selectedEtat === "all" || etat === selectedEtat)) {
@@ -238,18 +244,18 @@
                     }
                 }
             });
-    
+
             filterEtat.addEventListener("change", function() {
                 var selectedThematique = filterThematique.value;
                 var selectedEtat = filterEtat.value;
-    
+
                 var users = userList.getElementsByClassName("col-sm-2");
-    
+
                 for (var i = 0; i < users.length; i++) {
                     var user = users[i];
                     var thematique = user.querySelector(".span-thematique").textContent.trim();
                     var etat = user.querySelector(".span-etat").textContent.trim();
-    
+
                     if ((selectedThematique === "all" || thematique === selectedThematique) &&
                         (selectedEtat === "all" || etat === selectedEtat)) {
                         user.style.display = "block";
@@ -259,8 +265,8 @@
                 }
             });
         });
-    </script>
-    
+    </script> --}}
+
     {{-- script du filtre du statu de presence --}}
 
     <script>
@@ -283,31 +289,25 @@
             });
         });
     </script>
+{{-- filtre des resumés --}}
+<script>
+    $(document).ready(function() {
+        $('input[name="statut-filter"]').change(function() {
+            var selectedStatut = $(this).val();
+            var cells = $('.statut-cell');
 
-
-    {{-- fitre du raport de projet --}}
-    <script>
-        $(document).ready(function() {
-            $('input[name="thematique-filter"]').change(function() {
-                var selectedThematique = $(this).val();
-
-                // Affichez tous les éléments avec la classe .col-md-2
-                $('.col-md-2').show();
-
-                // Si une thématique est sélectionnée, masquez les éléments qui ne correspondent pas
-                if (selectedThematique !== "") {
-                    $('.col-md-2').filter(function() {
-                        return $(this).data('thematique') !== selectedThematique;
-                    }).hide();
+            cells.each(function() {
+                var cell = $(this);
+                var statutText = cell.text().trim();
+                                if (selectedStatut === 'all' || selectedStatut === statutText) {
+                    cell.closest('.col-12').show();
+                } else {
+                    cell.closest('.col-12').hide();
                 }
             });
         });
-    </script>
-
-
-
-
-
+    });
+</script>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

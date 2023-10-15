@@ -2,31 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Resume;
+use App\Models\Resumé_dhc;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class ResumeController extends Controller {
+class Resumé_dhcController extends Controller {
 
-    public function index() {
-        $users = Resume::query()->latest()->paginate( 10 );
-
-        return view( 'resumes.index', compact( 'users' ) );
+    public function dhc() {
+        $users = Resumé_dhc::query()->latest()->paginate( 10 );
+        return view( 'resumes.dhc', compact( 'users' ) );
     }
 
-    public function ajouter() {
-        return view( 'resumes.ajouter' );
+    public function dhccreate() {
+        return view( 'resumes.dhccreate' );
     }
 
-    public function gestion() {
-        return view( 'resumes.gestion' );
-    }
-
-    public function store( Request $request ) {
+    public function storedhc( Request $request ) {
 
         $request->validate( [
             'Description' => 'required',
-            'Thématique' => 'required',
             'Etat' => 'required',
             'pdf_file' => 'required|mimes:pdf,odt,txt,docx,ppt,pptx,doc|max:10240',
         ] );
@@ -40,16 +34,15 @@ class ResumeController extends Controller {
             // Stockage du fichier PDF
         }
 
-        $user = new Resume;
+        $user = new Resumé_dhc;
         $user->Description = $request->input( 'Description' );
-        $user->Thématique = $request->input( 'Thématique' );
         $user->Etat = $request->input( 'Etat' );
         $user->pdf_path = $pdfPath;
         // Utilisez la variable $pdfPath générée précédemment
         $user->save();
 
-        return redirect()->route( 'resumes.index' )->with( [
-            'message' => 'Resume added successfully!',
+        return redirect()->route( 'resumes.dhc' )->with( [
+            'message' => 'Resumé_dhc added successfully!',
             'status' => 'success'
         ] );
     }
