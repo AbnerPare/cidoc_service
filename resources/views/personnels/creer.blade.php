@@ -128,7 +128,7 @@
                                 </div>
                             </div>
 
-
+{{-- 
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label">Image</label>
                                 <div class="col-sm-9">
@@ -140,7 +140,7 @@
                                     @enderror
                                 </div>
                             </div>
-
+ --}}
 
 
                             <div class="row mb-3">

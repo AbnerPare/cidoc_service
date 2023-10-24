@@ -45,7 +45,7 @@ Contrats
                                 <div>
                                     <p style="color: white">
                                         {{ $user['Description'] }}
-                                    </p>
+                                   </p>
                                 </div>
                             </div>
                             <a href="{{ asset('storage/' . $user->pdf_path) }}" target="_blank"

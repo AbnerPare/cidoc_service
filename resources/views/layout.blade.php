@@ -12,11 +12,61 @@
             background: linear-gradient(to bottom, rgba(113, 173, 237, 0.5), rgba(255, 255, 255, 0.5));
 
         }
+
         .gradient-background {
             padding: 20px;
-            background: linear-gradient(to bottom, #0556ac, #ffffff);
+            background: linear-gradient(to bottom, #666, #ffffff);
             /* Autres propriétés CSS au besoin */
             /* Couleur du texte pour une meilleure lisibilité */
+        }
+
+        #maCarte {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        #maCarte:hover {
+            transform: translateY(-15px);
+        }
+
+        .background-image {
+            background-image: url('img/fond.jpg');
+            /* Remplacez 'votre-image.jpg' par le chemin de votre image */
+            background-size: cover;
+            /* Ajuste la taille de l'image pour couvrir tout l'élément */
+            background-position: center;
+            /* Centre l'image */
+            background-repeat: no-repeat;
+            /* Empêche la répétition de l'image */
+            height: 100vh;
+            /* Hauteur de l'image à 100% de la hauteur de la fenêtre */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            /* Hauteur minimale de la fenêtre visible */
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            flex: 1;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to bottom, #787777, #ffffff);
+            -webkit-background-clip: text;
+            /* Permet au dégradé de traverser le texte */
+            color: transparent;
+            /* Rend le texte transparent */
         }
     </style>
     <!-- Favicon -->
@@ -37,8 +87,8 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body style="color: black">
-    <div class="tout">
+<body class="background-image">
+    <div class="tout wrapper">
 
         <div class="wrapper">
             <!-- Nav Bar Start -->
@@ -110,14 +160,25 @@
                                     </div>
                                 </div>
                                 <a href="{{ URL::to('/forum') }}" class="nav-item nav-link">Forum</a>
-                                <a href="{{ URL::to('/mission') }}" class="nav-item nav-link">Demandes</a>
-                                <a href="{{ URL::to('/validation') }}" class="nav-item nav-link">Admin</a>
-                                <a href="{{ URL::to('/gestion') }}" class="nav-item nav-link">Gestion</a>
+                                <a href="{{ URL::to('/documentation') }}" class="nav-item nav-link">document</a>
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle"
+                                        data-toggle="dropdown">Connexion</a>
+                                    <div class="dropdown-menu">
+                                        <a href="{{ URL::to('/validation') }}"
+                                            class="nav-item nav-link">Coordonateur</a> </a>
+                                        <a href="{{ URL::to('/gestion') }}" class="nav-item nav-link">Supérieur </a>
+                                        <a href="{{ URL::to('/mission') }}" class="nav-item nav-link">Mes
+                                            demandes</a>
+                                        <a href="{{ URL::to('/gestion') }}"
+                                            class="nav-item nav-link">Gestionnaire</a>
+                                    </div>
+                                </div>
                                 {{-- bouton de recherche --}}
                                 <form class="d-flex justify-content-end" role="search">
-                                    <input class="form-control me-3" type="search" placeholder="Rechercher ici"
+                                    <input class="form-control me-3" type="search" placeholder="tapez ici "
                                         required>
-                                    <button class="me-2  btn-outline-success" type="submit">Rechercher</button>
+                                    <button class="me-2  btn-outline-success" type="submit">Recherchez</button>
                                 </form>
                             </div>
                         </div>
@@ -125,27 +186,13 @@
                 </div>
             </div>
         </div>
-
         <!-- Nav Bar End -->
-
-
-
         {{-- debut du contenu   --}}
-
-
-
-
-
         @yield('contenu')
-
-
-
-
     </div>
     {{-- fin du contenu            --}}
-
     <!-- Footer Start -->
-    <div class="footer text-white">
+    <footer class="footer text-white " style="background-color: #666;  ">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-lg-4">
@@ -184,9 +231,10 @@
 
                                     09 BP 753 Ouagadougou 09 Burkina Faso</p>
                                 <p>
-                                    <a class="fa fa-phone-alt text-white" href="tel:+22625505443" target="_blank">+226 25 50 54 43</a>
+                                    <a class="fa fa-phone-alt text-white" href="tel:+22625505443"
+                                        target="_blank">+226 25 50 54 43</a>
                                 <p><a class="fa fa-envelope text-white" href="mailto:contact@centrecitoyen.org"
-                                    target="_blank">contact@centrecitoyen.org</a></p>
+                                        target="_blank">contact@centrecitoyen.org</a></p>
                                 <div class="footer-social">
                                     <a href=""><i class="fab fa-twitter"></i></a>
                                     <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -206,69 +254,9 @@
             </div>
         </div>
 
-    </div>
+    </footer>
     <!-- Footer End -->
-
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-    </div>
-
-    {{-- script du filtre des thématiques --}}
-    {{-- <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Sélectionnez les éléments de filtre
-            var filterThematique = document.getElementById("filter");
-            var filterEtat = document.getElementById("filt");
-
-            // Sélectionnez la liste d'utilisateurs
-            var userList = document.getElementById("user-list");
-
-            // Écoutez les changements dans les filtres
-            filterThematique.addEventListener("change", function() {
-                var selectedThematique = filterThematique.value;
-                var selectedEtat = filterEtat.value;
-
-                // Parcourez les éléments de la liste d'utilisateurs
-                var users = userList.getElementsByClassName("col-sm-2");
-
-                for (var i = 0; i < users.length; i++) {
-                    var user = users[i];
-                    var thematique = user.querySelector(".span-thematique").textContent.trim();
-                    var etat = user.querySelector(".span-etat").textContent.trim();
-
-                    // Affichez ou masquez l'utilisateur en fonction des filtres sélectionnés
-                    if ((selectedThematique === "all" || thematique === selectedThematique) &&
-                        (selectedEtat === "all" || etat === selectedEtat)) {
-                        user.style.display = "block";
-                    } else {
-                        user.style.display = "none";
-                    }
-                }
-            });
-
-            filterEtat.addEventListener("change", function() {
-                var selectedThematique = filterThematique.value;
-                var selectedEtat = filterEtat.value;
-
-                var users = userList.getElementsByClassName("col-sm-2");
-
-                for (var i = 0; i < users.length; i++) {
-                    var user = users[i];
-                    var thematique = user.querySelector(".span-thematique").textContent.trim();
-                    var etat = user.querySelector(".span-etat").textContent.trim();
-
-                    if ((selectedThematique === "all" || thematique === selectedThematique) &&
-                        (selectedEtat === "all" || etat === selectedEtat)) {
-                        user.style.display = "block";
-                    } else {
-                        user.style.display = "none";
-                    }
-                }
-            });
-        });
-    </script> --}}
-
-    {{-- script du filtre du statu de presence --}}
-
+    
     <script>
         $(document).ready(function() {
             $('input[name="statut-filter"]').change(function() {
@@ -289,25 +277,25 @@
             });
         });
     </script>
-{{-- filtre des resumés --}}
-<script>
-    $(document).ready(function() {
-        $('input[name="statut-filter"]').change(function() {
-            var selectedStatut = $(this).val();
-            var cells = $('.statut-cell');
+    {{-- filtre des resumés --}}
+    <script>
+        $(document).ready(function() {
+            $('input[name="statut-filter"]').change(function() {
+                var selectedStatut = $(this).val();
+                var cells = $('.statut-cell');
 
-            cells.each(function() {
-                var cell = $(this);
-                var statutText = cell.text().trim();
-                                if (selectedStatut === 'all' || selectedStatut === statutText) {
-                    cell.closest('.col-12').show();
-                } else {
-                    cell.closest('.col-12').hide();
-                }
+                cells.each(function() {
+                    var cell = $(this);
+                    var statutText = cell.text().trim();
+                    if (selectedStatut === 'all' || selectedStatut === statutText) {
+                        cell.closest('.col-12').show();
+                    } else {
+                        cell.closest('.col-12').hide();
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

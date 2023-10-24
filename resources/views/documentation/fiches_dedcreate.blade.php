@@ -1,21 +1,21 @@
 @extends('layout')
 @section('titre')
-    Formulaire DHC
+    Formulaire DED
 @endsection
 
 @section('contenu')
-    <div class="container mb-5"><br><br><br>
+    <div class="container mb-5"><br> <br><br>
         <div class="row justify-content-center ">
             <div class="col-md-8 bg-success" style="border-radius: 20px ; border:solid 10px rgb(64, 170, 64)">
                 <div class="card" style="border-radius: 20px ; border: none ">
                     <div class="card-header bg-success text-center" style="color:#f1f7fa; font-weight:bold">
-                        <h4> Ajouter le résumé DHC</h4>
+                        <h4> Ajouter un fichier DED</h4>
                     </div>
                     @if ($errors->any())
                         {!! implode('', $errors->all('<div>:message</div>')) !!}
                     @endif
                     <div class="card-body"style="background-color: rgb(206, 206, 195)">
-                        <form class="w-px-500 p-3 p-md-3 dark-text" action="{{ route('resumes.storedhc') }}" method="post"
+                        <form class="w-px-500 p-3 p-md-3 dark-text" action="{{ route('documentation.storefiches_ded') }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
 
@@ -23,7 +23,7 @@
                                 <label class="col-sm-3 col-form-label">Description</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" name="Description" placeholder="Description"
-                                        @error('Description') is-invalid @enderror >
+                                        @error('Description') is-invalid @enderror>
                                     @error('Description')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -66,7 +66,8 @@
                                 <div class="col-sm-9">
                                     <button type="submit" class="btn btn-primary">Ajouter</button>
                                 </div>
-                            </div>                          </form>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

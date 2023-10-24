@@ -10,8 +10,6 @@ use App\Http\Controllers\CidocController;
 use App\Http\Controllers\DirecteurController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ContratController;
-use App\Http\Controllers\OmissionController;
-use App\Http\Controllers\OcongeController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\AbsenceController;
 use App\Http\Controllers\CongeController;
@@ -19,7 +17,23 @@ use App\Http\Controllers\DemandeurController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\Resumé_dedController;
 use App\Http\Controllers\Resumé_dhcController;
-use App\Http\Controllers\ProtectionController;
+use App\Http\Controllers\Resumé_protectionController;
+use App\Http\Controllers\Resumé_administrativeController;
+use App\Http\Controllers\Resumé_logistiqueController;
+use App\Http\Controllers\Fiches_de_congéController;
+use App\Http\Controllers\Fiches_de_missionController;
+use App\Http\Controllers\Fiches_de_contratController;
+use App\Http\Controllers\Fiches_dedController;
+use App\Http\Controllers\Fiches_dhcController;
+use App\Http\Controllers\Fiches_protectionController;
+
+
+
+
+
+
+
+
 
 
 use App\Http\Controllers\Controller;
@@ -40,10 +54,46 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/fiches_protection', [Fiches_protectionController::class, 'fiches_protection'])->name('documentation.fiches_protection');      
+Route::get('/fiches_protectioncreate', [Fiches_protectionController::class, 'fiches_protectioncreate'])->name('documentation.fiches_protectioncreate'); 
+Route::post('/fiches_protection', [Fiches_protectionController::class, 'storefiches_protection'])->name('documentation.storefiches_protection');
 
-Route::get('/protection', [ProtectionController::class, 'protection'])->name('resumes.protection');      
-Route::get('/protectioncreate', [ProtectionController::class, 'protectioncreate'])->name('resumes.protectioncreate'); 
-Route::post('/protection', [ProtectionController::class, 'storeprotection'])->name('resumes.storeprotection'); 
+Route::get('/fiches_dhc', [Fiches_dhcController::class, 'fiches_dhc'])->name('documentation.fiches_dhc');      
+Route::get('/fiches_dhccreate', [Fiches_dhcController::class, 'fiches_dhccreate'])->name('documentation.fiches_dhccreate'); 
+Route::post('/fiches_dhc', [Fiches_dhcController::class, 'storefiches_dhc'])->name('documentation.storefiches_dhc');
+
+Route::get('/fiches_ded', [Fiches_dedController::class, 'fiches_ded'])->name('documentation.fiches_ded');      
+Route::get('/fiches_dedcreate', [Fiches_dedController::class, 'fiches_dedcreate'])->name('documentation.fiches_dedcreate'); 
+Route::post('/fiches_ded', [Fiches_dedController::class, 'storefiches_ded'])->name('documentation.storefiches_ded');
+
+Route::get('/fiches_de_contrat', [Fiches_de_contratController::class, 'fiches_de_contrat'])->name('documentation.fiches_de_contrat');      
+Route::get('/fiches_de_contratcreate', [Fiches_de_contratController::class, 'fiches_de_contratcreate'])->name('documentation.fiches_de_contratcreate'); 
+Route::post('/fiches_de_contrat', [Fiches_de_contratController::class, 'storefiches_de_contrat'])->name('documentaion.storefiches_de_contrat');
+
+
+Route::get('/fiches_de_mission', [Fiches_de_missionController::class, 'fiches_de_mission'])->name('documentation.fiches_de_mission');      
+Route::get('/fiches_de_missioncreate', [Fiches_de_missionController::class, 'fiches_de_missioncreate'])->name('documentation.fiches_de_missioncreate'); 
+Route::post('/fiches_de_mission', [Fiches_de_missionController::class, 'storefiches_de_mission'])->name('documentaion.storefiches_de_mission');
+
+Route::get('/rapport_de_project', [Fiches_de_congéController::class, 'rapport_de_project'])->name('documentation.rapport_de_project');      
+Route::get('/documentation', [Fiches_de_congéController::class, 'documentation'])->name('documentation.documentation');      
+Route::get('/fiches_de_congé', [Fiches_de_congéController::class, 'fiches_de_congé'])->name('documentation.fiches_de_congé');      
+Route::get('/fiches_de_congécreate', [Fiches_de_congéController::class, 'fiches_de_congécreate'])->name('documentation.fiches_de_congécreate'); 
+Route::post('/fiches_de_congé', [Fiches_de_congéController::class, 'storefiches_de_congé'])->name('documentaion.storefiches_de_congé');
+
+
+Route::get('/logistique', [Resumé_logistiqueController::class, 'logistique'])->name('resumes.logistique');      
+Route::get('/logistiquecreate', [Resumé_logistiqueController::class, 'logistiquecreate'])->name('resumes.logistiquecreate'); 
+Route::post('/logistique', [Resumé_logistiqueController::class, 'storelogistique'])->name('resumes.storelogistique'); 
+
+
+Route::get('/administrative', [Resumé_administrativeController::class, 'administrative'])->name('resumes.administrative');      
+Route::get('/administrativecreate', [Resumé_administrativeController::class, 'administrativecreate'])->name('resumes.administrativecreate'); 
+Route::post('/administrative', [Resumé_administrativeController::class, 'storeadministrative'])->name('resumes.storeadministrative'); 
+
+Route::get('/protection', [Resumé_protectionController::class, 'protection'])->name('resumes.protection');      
+Route::get('/protectioncreate', [Resumé_protectionController::class, 'protectioncreate'])->name('resumes.protectioncreate'); 
+Route::post('/protection', [Resumé_protectionController::class, 'storeprotection'])->name('resumes.storeprotection'); 
 
 Route::get('/dhc', [Resumé_dhcController::class, 'dhc'])->name('resumes.dhc');      
 Route::get('/dhccreate', [Resumé_dhcController::class, 'dhccreate'])->name('resumes.dhccreate'); 
@@ -72,14 +122,6 @@ Route::post('/rapport', [RapportController::class, 'stor'])->name('rapports.stor
 Route::get('/contrat', [ContratController::class, 'contrat'])->name('contrats.contrat');      
 Route::get('/crate', [ContratController::class, 'crate'])->name('contrats.crate'); 
 Route::post('/contrat', [ContratController::class, 'store'])->name('contrats.store');
-
-Route::get('/omission', [OmissionController::class, 'omission'])->name('omissions.omission');      
-Route::get('/create', [OmissionController::class, 'create'])->name('omissions.create'); 
-Route::post('/omission', [OmissionController::class, 'store'])->name('omissions.store');
-
-Route::get('/oconge', [OcongeController::class, 'oconge'])->name('oconges.oconge');    
-Route::get('/creat', [OcongeController::class, 'creat'])->name('oconges.creat'); 
-Route::post('/oconge', [OcongeController::class, 'store'])->name('oconges.store');
 
 Route::get('/absence', [AbsenceController::class, 'absence'])->name('absences.absence');      
 Route::get('/cre_ab', [AbsenceController::class, 'cre_ab'])->name('absences.cre_ab'); 

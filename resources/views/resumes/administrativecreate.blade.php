@@ -1,21 +1,21 @@
 @extends('layout')
 @section('titre')
-    Formulaire DHC
+    Formulaire Administrative
 @endsection
 
 @section('contenu')
-    <div class="container mb-5"><br><br><br>
-        <div class="row justify-content-center ">
+    <div class="container mb-5 "><br><br><br>
+        <div class="row justify-content-center  ">
             <div class="col-md-8 bg-success" style="border-radius: 20px ; border:solid 10px rgb(64, 170, 64)">
                 <div class="card" style="border-radius: 20px ; border: none ">
                     <div class="card-header bg-success text-center" style="color:#f1f7fa; font-weight:bold">
-                        <h4> Ajouter le résumé DHC</h4>
+                        <h4> Ajouter le résumé Administrative</h4>
                     </div>
                     @if ($errors->any())
                         {!! implode('', $errors->all('<div>:message</div>')) !!}
                     @endif
                     <div class="card-body"style="background-color: rgb(206, 206, 195)">
-                        <form class="w-px-500 p-3 p-md-3 dark-text" action="{{ route('resumes.storedhc') }}" method="post"
+                        <form class="w-px-500 p-3 p-md-3 dark-text" action="{{ route('resumes.storeadministrative') }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
 
@@ -66,11 +66,11 @@
                                 <div class="col-sm-9">
                                     <button type="submit" class="btn btn-primary">Ajouter</button>
                                 </div>
-                            </div>                          </form>
+                            </div>                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <br><br>
     </div>
+    <br><br><br>
 @endsection

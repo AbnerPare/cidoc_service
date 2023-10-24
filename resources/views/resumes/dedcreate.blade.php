@@ -4,7 +4,7 @@
 @endsection
 
 @section('contenu')
-    <div class="container "><br>
+    <div class="container mb-5"><br> <br><br>
         <div class="row justify-content-center ">
             <div class="col-md-8 bg-success" style="border-radius: 20px ; border:solid 10px rgb(64, 170, 64)">
                 <div class="card" style="border-radius: 20px ; border: none ">
@@ -23,7 +23,7 @@
                                 <label class="col-sm-3 col-form-label">Description</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" name="Description" placeholder="Description"
-                                        @error('Description') is-invalid @enderror >
+                                        @error('Description') is-invalid @enderror>
                                     @error('Description')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -61,11 +61,17 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Soumettre</button>
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label"></label>
+                                <div class="col-sm-9">
+                                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+        <br><br>
     </div>
 @endsection

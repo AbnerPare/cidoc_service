@@ -14,10 +14,10 @@
 
 {{-- debut contenu --}}
 @section('contenu')
+    <div class="text-center gradient-background">
+        <h1 class="text-white">Statut de présence</h1>
+    </div>
     <div class="container-fluid" style="background-color: rgb(233, 245, 235)">
-        <h1 class="text-center"> <u> Statut de présence </u></h1>
-
-
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="statut-filter" id="all" value="all" checked>
             <label class="form-check-label" for="all">Tous les statuts</label>
@@ -45,9 +45,6 @@
                     <table class="table table-hover">
                         <thead class="bg-success text-white">
                             <tr>
-                                <th>
-                                    <h6>Photo</h6>
-                                </th>
                                 <th>
                                     <h6>Nom</h6>
                                 </th>
@@ -77,11 +74,7 @@
                         </thead>
                         <tbody style="font-size: 20px">
                             @foreach ($users as $user)
-                                <tr>
-                                    <td><img src="{{ asset('storage/images/' . $user->image) }}" alt="{{ $user->Nom }}"
-                                            width="50" height="50"
-                                            style=" border:solid 5px green; border-radius:50px ">
-                                    </td>
+                                <tr >
                                     <td>
                                         <h5 style="font-size: 20px; text-transform: uppercase;">{{ $user->Nom }}</h5>
                                     </td>
@@ -117,6 +110,7 @@
                 </div>
             </div>
         </div>
+        <br><br>
     </div>
 
 

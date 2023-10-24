@@ -1,11 +1,11 @@
 @extends('layout')
 @section('titre')
-    Actions DED
+    Actions Administrative
 @endsection
 
 @section('contenu')
     <div class=" gradient-background ">
-        <h1 class="text-center text-gradient"> <u>Les actions DED</u> </h1>
+        <h1 class="text-center text-gradient"> <u>Les actions Administrative</u> </h1>
         <div class="container-fluid">
             <div class="container text-center">
                 <div class="form-check form-check-inline">
@@ -22,12 +22,11 @@
                 </div>
             </div>
         </div>
-
-        <div class="container-fluid mt-3  mb-5">
+        <div class="container-fluid mt-3 mb-5">
             <div class="row" style="border-radius: 20px">
                 @foreach ($users as $user)
                     <div class="col-12 m-1">
-                        <div  style="border: 2px solid #b1bdd7; border-radius: 20px; background-color:#9aadd6;">
+                        <div style="border: 2px solid #ccc; border-radius: 20px; background-color:#9aadd6;">
                             <div class="d-flex align-items-center">
                                 <div class="statut-cell mr-2">
                                     <h6>
