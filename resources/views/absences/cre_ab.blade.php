@@ -17,7 +17,7 @@
             <div class="col-md-10 bg-success" style="border-radius: 20px ; border:solid 10px rgb(64, 170, 64)">
                 <div class="card" style="border-radius: 20px ; border: none">
                     <div class="card-header bg-success text-center" style="color:#f1f7fa; font-weight:bold">
-                        <h4>Formulaire de demande d'absence</h4>
+                        <h4>Formulaire d'otaurisation d'absence</h4>
                     </div>
                     @if ($errors->any())
                         {!! implode('', $errors->all('<div>:message</div>')) !!}

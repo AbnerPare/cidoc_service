@@ -16,10 +16,8 @@
     <div id="carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="img/ci.png" alt="Carousel Image">
+                <img src="img/lo.png" alt="Carousel Image">
                 <div class="carousel-caption">
-                    <h1 class="animated fadeInLeft">Citizen’s information and documentation center</h1>
-                    <a class="btn animated fadeInUp" href="http://www.centrecitoyen.org/">En savoir plus</a>
                 </div>
             </div>
 

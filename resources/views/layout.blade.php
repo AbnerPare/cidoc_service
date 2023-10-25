@@ -132,26 +132,7 @@
                                         <a href="blog.html" class="dropdown-item">Demandes de fonds</a>
                                         <a href="single.html" class="dropdown-item">Fournisseur</a>
                                     </div>
-                                </div>
-
-
-
-                                <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle"
-                                        data-toggle="dropdown">Documentation</a>
-                                    <div class="dropdown-menu">
-                                        <a href="{{ URL::to('/oconge') }}" class="dropdown-item"> Fiche de congé </a>
-                                        <a href="{{ URL::to('/omission') }}" class="dropdown-item">Ordre de mission
-                                        </a>
-                                        <a href="{{ URL::to('/contrat') }}" class="dropdown-item">Contrats </a>
-                                        <a href="{{ URL::to('/rapport') }}" class="dropdown-item">Rapports de
-                                            projets</a>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="nav-item dropdown">
+                                </div>                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tâches
                                     </a>
                                     <div class="dropdown-menu">

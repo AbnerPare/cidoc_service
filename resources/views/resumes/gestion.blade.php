@@ -103,7 +103,13 @@
                 <div class="col-md-3 col-lg-2 col-sm-4 mb-4 bm-4 wow fadeIn" data-wow-delay=".5s">
                     <div style="background-color: rgb(145, 167, 167)" class="pb-4 pt-4 text-center services-content">
                         <h6>Fiches d'action administrative</h6>
-                        <a href="{{ route('documentation.fiches_administrative') }}" class="btn btn-success btn-xs py-0 ">Ajouter</a>
+                        <a href="{{ route('documentation.fiches_administrativecreate') }}" class="btn btn-success btn-xs py-0 ">Ajouter</a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-4 mb-4 bm-4 wow fadeIn" data-wow-delay=".5s">
+                    <div style="background-color: rgb(145, 167, 167)" class="pb-4 pt-4 text-center services-content">
+                        <h6>Fiches d'action logistique</h6>
+                        <a href="{{ route('documentation.fiches_logistiquecreate') }}" class="btn btn-success btn-xs py-0 ">Ajouter</a>
                     </div>
                 </div>
             </div>

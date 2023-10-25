@@ -8,11 +8,11 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('rapports', function (Blueprint $table) {
+        Schema::create('fiches_administratives', function (Blueprint $table) {
             $table->id();
             $table->string('Description');
-            $table->string('Thématique');
             $table->string('pdf_path')->nullable();
+            $table->string('Etat');
             $table->timestamps();
         });
     }
@@ -24,10 +24,11 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rapports');
-        Schema::table('rapports', function (Blueprint $table) {
+        Schema::dropIfExists('fiches_administratives');
+        Schema::table('fiches_administratives', function (Blueprint $table) {
             $table->dropColumn('pdf_path');
         });
         
     }
 };
+    

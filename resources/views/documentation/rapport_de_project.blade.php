@@ -46,9 +46,9 @@
                 </div>
                 <div class="col-md-2  col-sm-4 just" id="maCarte"
                     style="border-radius: 50%; position: relative; overflow: hidden;">
-                    <a href="{{ URL::to('/ded') }}" style=" display: block; border-radius: 50%;">
-                        <div style="background-color: rgb(46, 44, 44)" class="pb-4 pt-4  services-content">
-                            <h5 class="p-4" style="color: white ">Action logistique</h5>
+                    <a href="{{ URL::to('/fiches_logistique') }}" style=" display: block; border-radius: 50%;">
+                        <div style="background-color: rgb(46, 44, 44)" class="pb-4 pt-4 text-center  services-content">
+                            <h5 class="p-4" style="color: white">Action logistique</h5>
                         </div>
                     </a>
                 </div>

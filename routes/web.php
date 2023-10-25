@@ -26,6 +26,10 @@ use App\Http\Controllers\Fiches_de_contratController;
 use App\Http\Controllers\Fiches_dedController;
 use App\Http\Controllers\Fiches_dhcController;
 use App\Http\Controllers\Fiches_protectionController;
+use App\Http\Controllers\Fiches_administrativeController;
+use App\Http\Controllers\Fiches_logistiqueController;
+
+
 
 
 
@@ -54,6 +58,14 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/fiches_logistique', [Fiches_logistiqueController::class, 'fiches_logistique'])->name('documentation.fiches_logistique');      
+Route::get('/fiches_logistiquecreate', [Fiches_logistiqueController::class, 'fiches_logistiquecreate'])->name('documentation.fiches_logistiquecreate'); 
+Route::post('/fiches_logistique', [Fiches_logistiqueController::class, 'storefiches_logistique'])->name('documentation.storefiches_logistique');
+
+Route::get('/fiches_administrative', [Fiches_administrativeController::class, 'fiches_administrative'])->name('documentation.fiches_administrative');      
+Route::get('/fiches_administrativecreate', [Fiches_administrativeController::class, 'fiches_administrativecreate'])->name('documentation.fiches_administrativecreate'); 
+Route::post('/fiches_administrative', [Fiches_administrativeController::class, 'storefiches_administrative'])->name('documentation.storefiches_administrative');
+
 Route::get('/fiches_protection', [Fiches_protectionController::class, 'fiches_protection'])->name('documentation.fiches_protection');      
 Route::get('/fiches_protectioncreate', [Fiches_protectionController::class, 'fiches_protectioncreate'])->name('documentation.fiches_protectioncreate'); 
 Route::post('/fiches_protection', [Fiches_protectionController::class, 'storefiches_protection'])->name('documentation.storefiches_protection');
